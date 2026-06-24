@@ -15,27 +15,37 @@ class _LoginScreenState extends State<LoginScreen> {
   final passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text('Se connecter', style: Theme.of(context).textTheme.displayLarge),
-
-          SizedBox(height: 20),
-          CustomTextFormField(controller: emailController, hintText: "Email"),
-          SizedBox(height: 20),
-          CustomTextFormField(
-            controller: passwordController,
-            hintText: "Password",
+    return SafeArea(
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text('Se connecter', style: Theme.of(context).textTheme.displayLarge),
+          
+                SizedBox(height: 20),
+                CustomTextFormField(controller: emailController, hintText: "Email"),
+                SizedBox(height: 20),
+                CustomTextFormField(
+                  controller: passwordController,
+                  hintText: "Password",
+                ),
+                SizedBox(height: 20),
+                CustomElevatedButton(
+                  text: "Se connecter",
+                  onPressed: widget.onFinish,
+                ),
+                SizedBox(height: 20),
+                TextButton(onPressed: () {}, child: Text("Mot de passe oublié ?")),
+                SizedBox(height: 20),
+                Text("Vous n'avez pas de compte ?"),
+                TextButton(onPressed: () {}, child: Text("S'inscrire")),
+              ],
+            ),
           ),
-          SizedBox(height: 20),
-          CustomElevatedButton(
-            text: "Se connecter",
-            onPressed: widget.onFinish,
-          ),
-          SizedBox(height: 20),
-          TextButton(onPressed: () {}, child: Text("Mot de passe oublié ?")),
-        ],
+        ),
       ),
     );
     // Center(

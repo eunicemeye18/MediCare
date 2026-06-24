@@ -4,7 +4,11 @@ class CustomTextFormField extends StatefulWidget {
   final TextEditingController controller;
   final String hintText;
 
-  const CustomTextFormField({super.key, required this.controller, required this.hintText});
+  const CustomTextFormField({
+    super.key,
+    required this.controller,
+    required this.hintText,
+  });
 
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();
@@ -16,16 +20,19 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     return SizedBox(
       width: 320,
       child: TextFormField(
-        
         controller: widget.controller,
+        style: TextStyle(color: Colors.black),
         decoration: InputDecoration(
           hintText: widget.hintText,
-          
-          focusedBorder: OutlineInputBorder(
+          hintStyle: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Colors.black),
+          enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.grey.withValues(alpha: 0.2)),
-            borderRadius: BorderRadius.circular(15)
+            borderRadius: BorderRadius.circular(15),
           ),
-          border: OutlineInputBorder(borderSide: BorderSide(color: Colors.white.withValues(alpha: 0.5)), borderRadius: BorderRadius.circular(15)),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.grey.withValues(alpha: 0.5)),
+            borderRadius: BorderRadius.circular(15),
+          ),
         ),
       ),
     );

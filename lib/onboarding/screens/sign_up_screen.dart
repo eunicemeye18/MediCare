@@ -17,30 +17,36 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            'Inscrivez-vous',
-            style: Theme.of(context).textTheme.displayLarge,
+    return SafeArea(
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Image.asset('assets/images/logo.png', width: 200, height: 200),
+              SizedBox(height: 40),
+              Text(
+                'Inscrivez-vous',
+                style: Theme.of(context).textTheme.displayLarge?.copyWith(fontSize: 30),
+              ),
+              SizedBox(height: 50),
+              CustomTextFormField(controller: nameController, hintText: "Nom"),
+              SizedBox(height: 20),
+              CustomTextFormField(controller: emailController, hintText: "Email"),
+              SizedBox(height: 20),
+              CustomTextFormField(
+                controller: passwordController,
+                hintText: "Mot de pass",
+              ),
+              SizedBox(height: 20),
+              CustomElevatedButton(text: "S'inscrire", onPressed: () {}),
+              SizedBox(height: 20),
+              Text("Avez-vous déjà un compte ?"),
+              TextButton(onPressed: widget.onNext, child: Text("Se connecter")),
+            ],
           ),
-          SizedBox(height: 50),
-          CustomTextFormField(controller: nameController, hintText: "Name"),
-          SizedBox(height: 20),
-          CustomTextFormField(controller: emailController, hintText: "Email"),
-          SizedBox(height: 20),
-          CustomTextFormField(
-            controller: passwordController,
-            hintText: "Password",
-          ),
-          SizedBox(height: 20),
-          CustomElevatedButton(text: "S'inscrire", onPressed: () {}),
-          SizedBox(height: 20),
-          Text("Avez-vous déjà un compte ?"),
-          SizedBox(height: 20),
-          TextButton(onPressed: widget.onNext, child: Text("Log in")),
-        ],
+        ),
       ),
     );
   }
