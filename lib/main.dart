@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:medicare/onboarding/screens/forgot_password.dart';
-import 'package:medicare/onboarding/screens/onboardin_screens.dart';
+import 'package:medicare/onboarding/screens/onboarding_screens.dart';
 import 'package:medicare/onboarding/screens/verification_otp_screen.dart';
 // import 'package:medicare/onboarding/screens/login_screen.dart';
 /// import 'package:medicare/onboarding/screens/sign_up_screen.dart';

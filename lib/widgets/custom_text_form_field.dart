@@ -24,7 +24,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         style: TextStyle(color: Colors.black),
         decoration: InputDecoration(
           hintText: widget.hintText,
-          hintStyle: Theme.of(context).textTheme.bodyLarge?.copyWith(color: Colors.black),
+          hintStyle: Theme.of(
+            context,
+          ).textTheme.bodyLarge?.copyWith(color: Colors.black),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.grey.withValues(alpha: 0.2)),
             borderRadius: BorderRadius.circular(15),
