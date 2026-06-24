@@ -26,7 +26,7 @@ void main() {
           labelLarge: TextStyle(fontSize: 14),
         ),
       ),
-      home: VerificationOtp(),
+      home: VerificationOtpScreen(),
     ),
   );
 }
