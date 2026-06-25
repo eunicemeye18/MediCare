@@ -23,10 +23,19 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text('Se connecter', style: Theme.of(context).textTheme.displayLarge),
-          
-                SizedBox(height: 20),
-                CustomTextFormField(controller: emailController, hintText: "Email"),
+                Image.asset('assets/images/icon.png', width: 100, height: 100),
+                SizedBox(height: 40),
+                Text(
+                  'Se connecter',
+                  style: Theme.of(
+                  context,
+                ).textTheme.displayLarge?.copyWith(fontSize: 30),
+                ),
+                SizedBox(height: 50),
+                CustomTextFormField(
+                  controller: emailController,
+                  hintText: "Email",
+                ),
                 SizedBox(height: 20),
                 CustomTextFormField(
                   controller: passwordController,
@@ -38,10 +47,22 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: widget.onFinish,
                 ),
                 SizedBox(height: 20),
-                TextButton(onPressed: () {}, child: Text("Mot de passe oublié ?")),
+                TextButton(
+                  onPressed: () {},
+                  child: Text("Mot de passe oublié ?"),
+                ),
                 SizedBox(height: 20),
-                Text("Vous n'avez pas de compte ?"),
-                TextButton(onPressed: () {}, child: Text("S'inscrire")),
+                Row(
+                  children: [
+                    Expanded(child: Text("Vous n'avez pas de compte ?")),
+                    Expanded(
+                      child: TextButton(
+                        onPressed: () {},
+                        child: Text("S'inscrire"),
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),

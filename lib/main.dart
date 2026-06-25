@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:medicare/onboarding/screens/forgot_password.dart';
 import 'package:medicare/onboarding/screens/onboarding_screens.dart';
-import 'package:medicare/onboarding/screens/verification_otp_screen.dart';
+// import 'package:medicare/onboarding/screens/forgot_password.dart';
 // import 'package:medicare/onboarding/screens/login_screen.dart';
 /// import 'package:medicare/onboarding/screens/sign_up_screen.dart';
 
@@ -12,6 +11,7 @@ void main() {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color.fromRGBO(5, 138, 179, 1),
+          secondary: const Color.fromRGBO(13, 71, 161, 1),
         ),
         textTheme: const TextTheme(
           displayLarge: TextStyle(
@@ -26,7 +26,7 @@ void main() {
           labelLarge: TextStyle(fontSize: 14),
         ),
       ),
-      home: VerificationOtpScreen(),
+      home: OnboardingScreen(),
     ),
   );
 }

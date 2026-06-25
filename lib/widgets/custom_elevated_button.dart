@@ -19,7 +19,7 @@ class _CustomElevatedButtonState extends State<CustomElevatedButton> {
         backgroundColor: Theme.of(context).colorScheme.primary,
         padding: EdgeInsets.only(right: 120, left: 120, top: 18, bottom: 18),
       ),
-      child: Text(widget.text, style: Theme.of(context).textTheme.bodyLarge),
+      child: Text(widget.text, style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.white)),
     );
     // ElevatedButton(
     //   onPressed: () {},

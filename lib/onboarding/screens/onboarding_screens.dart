@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:medicare/onboarding/screens/login_screen.dart';
 import 'package:medicare/onboarding/screens/sign_up_screen.dart';
+import 'package:medicare/onboarding/screens/welcome2_screen.dart';
+import 'package:medicare/onboarding/screens/welcome3_screen.dart';
 import 'package:medicare/onboarding/screens/welcome_screen.dart';
 
 
@@ -39,9 +41,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         controller: _pageController,
         physics: NeverScrollableScrollPhysics(), // désactive le swipe manuel
         children: [
-          WelcomeScreen(onNext: _nextPage),
+          WelcomeScreen(onNext: _nextPage, onFinish: _finish),
+          Welcome2Screen(onNext: _nextPage, onFinish: _finish),
+          Welcome3Screen(onNext: _nextPage, onFinish: _finish),
           SignUpScreen(onNext: _nextPage),
-          LoginScreen(onFinish: _finish),
+          LoginScreen(onFinish: _finish)
         ],
       ),
     );

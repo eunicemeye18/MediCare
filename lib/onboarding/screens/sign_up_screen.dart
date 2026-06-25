@@ -24,16 +24,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Image.asset('assets/images/logo.png', width: 200, height: 200),
+              Image.asset('assets/images/icon.png', width: 100, height: 100),
               SizedBox(height: 40),
               Text(
                 'Inscrivez-vous',
-                style: Theme.of(context).textTheme.displayLarge?.copyWith(fontSize: 30),
+                style: Theme.of(
+                  context,
+                ).textTheme.displayLarge?.copyWith(fontSize: 30),
               ),
               SizedBox(height: 50),
               CustomTextFormField(controller: nameController, hintText: "Nom"),
               SizedBox(height: 20),
-              CustomTextFormField(controller: emailController, hintText: "Email"),
+              CustomTextFormField(
+                controller: emailController,
+                hintText: "Email",
+              ),
               SizedBox(height: 20),
               CustomTextFormField(
                 controller: passwordController,
@@ -42,8 +47,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
               SizedBox(height: 20),
               CustomElevatedButton(text: "S'inscrire", onPressed: () {}),
               SizedBox(height: 20),
-              Text("Avez-vous déjà un compte ?"),
-              TextButton(onPressed: widget.onNext, child: Text("Se connecter")),
+              Row(
+                children: [
+                  Expanded(child: Text("Avez-vous déjà un compte ?")),
+                  Expanded(
+                    child: TextButton(
+                      onPressed: widget.onNext,
+                      child: Text("Se connecter"),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              TextButton(
+                onPressed: () {},
+                child: Text("Se connecter en tant que Médecin"),
+              ),
             ],
           ),
         ),
