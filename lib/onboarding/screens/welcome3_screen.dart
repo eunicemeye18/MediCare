@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:medicare/widgets/custom_elevated_button.dart';
 
 class Welcome3Screen extends StatefulWidget {
-  final VoidCallback onNext;
   final VoidCallback onFinish;
-  const Welcome3Screen({super.key, required this.onNext, required this.onFinish});
+  const Welcome3Screen({super.key, required this.onFinish});
 
   @override
   State<Welcome3Screen> createState() => _Welcome3ScreenState();
@@ -53,7 +52,7 @@ class _Welcome3ScreenState extends State<Welcome3Screen> {
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 20),
-                CustomElevatedButton(text: "Suivant", onPressed: widget.onNext),
+                CustomElevatedButton(text: "Suivant", onPressed: widget.onFinish),
               ],
             ),
           ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:medicare/onboarding/screens/forgot_password.dart';
 import 'package:medicare/widgets/custom_elevated_button.dart';
 import 'package:medicare/widgets/custom_text_form_field.dart';
 
 class LoginScreen extends StatefulWidget {
-  final VoidCallback onFinish;
-  const LoginScreen({super.key, required this.onFinish});
+  const LoginScreen({super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -16,8 +16,8 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: SingleChildScrollView(
-        child: Padding(
+      child: Scaffold(
+        body: Padding(
           padding: const EdgeInsets.all(20),
           child: Center(
             child: Column(
@@ -28,8 +28,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 Text(
                   'Se connecter',
                   style: Theme.of(
-                  context,
-                ).textTheme.displayLarge?.copyWith(fontSize: 30),
+                    context,
+                  ).textTheme.displayLarge?.copyWith(fontSize: 30),
                 ),
                 SizedBox(height: 50),
                 CustomTextFormField(
@@ -42,13 +42,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   hintText: "Password",
                 ),
                 SizedBox(height: 20),
-                CustomElevatedButton(
-                  text: "Se connecter",
-                  onPressed: widget.onFinish,
-                ),
+                CustomElevatedButton(text: "Valider", onPressed: () {}),
                 SizedBox(height: 20),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => ForgotPassword()),
+                    );
+                  },
                   child: Text("Mot de passe oublié ?"),
                 ),
                 SizedBox(height: 20),
@@ -57,8 +59,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     Expanded(child: Text("Vous n'avez pas de compte ?")),
                     Expanded(
                       child: TextButton(
-                        onPressed: () {},
-                        child: Text("S'inscrire"),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text(
+                          "S'inscrire",
+                          style: Theme.of(context).textTheme.bodyMedium
+                              ?.copyWith(
+                                color: Theme.of(context).colorScheme.primary,
+                              ),
+                        ),
                       ),
                     ),
                   ],

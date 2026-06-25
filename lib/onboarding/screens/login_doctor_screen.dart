@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:medicare/onboarding/screens/confirmation_screen.dart';
 import 'package:medicare/widgets/custom_elevated_button.dart';
 import 'package:medicare/widgets/custom_text_form_field.dart';
 import 'package:pinput/pinput.dart';
 
 class LoginDoctorScreen extends StatefulWidget {
-  final VoidCallback onFinish;
-  const LoginDoctorScreen({super.key, required this.onFinish});
+  const LoginDoctorScreen({super.key});
 
   @override
   State<LoginDoctorScreen> createState() => _LoginDoctorScreenState();
@@ -16,19 +16,28 @@ class _LoginDoctorScreenState extends State<LoginDoctorScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: SingleChildScrollView(
-        child: Padding(
+      child: Scaffold(
+        body: Padding(
           padding: const EdgeInsets.all(20),
           child: Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
+                Image.asset('assets/images/icon.png', width: 100, height: 100),
+                SizedBox(height: 40),
                 Text(
-                  'Se connecter',
-                  style: Theme.of(context).textTheme.displayLarge,
+                  'Se connecter en tant que',
+                  style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-
-                SizedBox(height: 20),
+                Text(
+                  'Médecin',
+                  style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 50),
                 CustomTextFormField(
                   controller: emailController,
                   hintText: "Email",
@@ -39,8 +48,13 @@ class _LoginDoctorScreenState extends State<LoginDoctorScreen> {
                 Pinput(length: 6),
                 SizedBox(height: 20),
                 CustomElevatedButton(
-                  text: "Se connecter",
-                  onPressed: widget.onFinish,
+                  text: "Valider",
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => ConfirmationScreen()),
+                    );
+                  },
                 ),
               ],
             ),

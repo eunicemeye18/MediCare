@@ -25,7 +25,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Image.asset('assets/images/logo.png', width: 150, height: 150),
+                  Image.asset('assets/images/logo.png', width: 150, height: 100),
                   SizedBox(height: 20),
                   Image.asset('assets/images/welcome.png', width: 800, height: 300),
                   SizedBox(height: 20),

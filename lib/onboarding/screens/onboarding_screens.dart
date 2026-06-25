@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:medicare/onboarding/screens/login_screen.dart';
 import 'package:medicare/onboarding/screens/sign_up_screen.dart';
 import 'package:medicare/onboarding/screens/welcome2_screen.dart';
 import 'package:medicare/onboarding/screens/welcome3_screen.dart';
 import 'package:medicare/onboarding/screens/welcome_screen.dart';
-
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -25,7 +23,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   void _finish() {
     // Ici tu navigues vers HomeScreen
-    Navigator.pushReplacementNamed(context, '/home');
+    // Navigator.pushReplacementNamed(context, '/home');
+    Navigator.push(context, MaterialPageRoute(builder: (_) => SignUpScreen()));
   }
 
   @override
@@ -43,9 +42,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         children: [
           WelcomeScreen(onNext: _nextPage, onFinish: _finish),
           Welcome2Screen(onNext: _nextPage, onFinish: _finish),
-          Welcome3Screen(onNext: _nextPage, onFinish: _finish),
-          SignUpScreen(onNext: _nextPage),
-          LoginScreen(onFinish: _finish)
+          Welcome3Screen(onFinish: _finish),
         ],
       ),
     );

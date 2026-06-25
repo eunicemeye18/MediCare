@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicare/onboarding/screens/confirmation_screen.dart';
 import 'package:medicare/widgets/custom_elevated_button.dart';
 import 'package:medicare/widgets/custom_text_form_field.dart';
 
@@ -20,16 +21,28 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text("Entrez votre email pour recevoir votre code de confimation"),
+              Text(
+                "Entrez votre email pour recevoir votre code de confimation",
+              ),
               SizedBox(height: 20),
-              CustomTextFormField(controller: emailController, hintText: "Email"),
+              CustomTextFormField(
+                controller: emailController,
+                hintText: "Email",
+              ),
               SizedBox(height: 20),
-              CustomElevatedButton(text: "Valider", onPressed: (){})
+              CustomElevatedButton(
+                text: "Valider",
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => ConfirmationScreen()),
+                  );
+                },
+              ),
             ],
           ),
         ),
       ),
     );
   }
-  
 }
