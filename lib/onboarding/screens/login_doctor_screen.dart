@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 // import 'package:medicare/onboarding/screens/confirmation_screen.dart';
 import 'package:medicare/widgets/custom_elevated_button.dart';
 import 'package:medicare/widgets/custom_text_form_field.dart';
@@ -54,7 +55,11 @@ class _LoginDoctorScreenState extends State<LoginDoctorScreen> {
                     //   context,
                     //   MaterialPageRoute(builder: (_) => ConfirmationScreen()),
                     // );
-                    Navigator.pushNamed(context, '/confirmation');
+
+
+                    // Navigator.pushNamed(context, '/confirmation');
+
+                    context.go('/confirmation');
                   },
                 ),
               ],

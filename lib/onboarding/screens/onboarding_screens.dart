@@ -23,7 +23,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   void _finish() {
     // Ici tu navigues vers HomeScreen
-    // Navigator.pushReplacementNamed(context, '/home');
+    // Navigator.pushReplacementNamed(context, '/sign_up');
     Navigator.push(context, MaterialPageRoute(builder: (_) => SignUpScreen()));
   }
 

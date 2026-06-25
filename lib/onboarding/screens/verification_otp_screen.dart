@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 // import 'package:medicare/onboarding/screens/confirmation_screen.dart';
 import 'package:medicare/widgets/custom_elevated_button.dart';
 import 'package:pinput/pinput.dart';
@@ -38,7 +39,12 @@ class _VerificationOtpScreenState extends State<VerificationOtpScreen> {
                     //   context,
                     //   MaterialPageRoute(builder: (_) => ConfirmationScreen()),
                     // );
-                    Navigator.pushNamed(context, '/confirmation');
+
+
+                    // Navigator.pushNamed(context, '/confirmation');
+
+
+                    context.go('/confirmation');
                   },
                 ),
               ],
