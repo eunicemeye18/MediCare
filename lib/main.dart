@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:medicare/onboarding/screens/confirmation_screen.dart';
+import 'package:medicare/onboarding/screens/forgot_password.dart';
 import 'package:medicare/onboarding/screens/home_page.dart';
 import 'package:medicare/onboarding/screens/login_doctor_screen.dart';
 import 'package:medicare/onboarding/screens/login_screen.dart';
 import 'package:medicare/onboarding/screens/onboarding_screens.dart';
 import 'package:medicare/onboarding/screens/sign_up_screen.dart';
 import 'package:medicare/onboarding/screens/verification_otp_screen.dart';
-// import 'package:medicare/onboarding/screens/forgot_password.dart';
-// import 'package:medicare/onboarding/screens/login_screen.dart';
-/// import 'package:medicare/onboarding/screens/sign_up_screen.dart';
+
 
 void main() {
   runApp(
@@ -20,6 +19,7 @@ void main() {
         '/sign_up': (context) => SignUpScreen(),
         '/login': (context) => LoginScreen(),
         '/login_doctor':(context) => LoginDoctorScreen(),
+        '/forgot_password':(context) => ForgotPassword(),
         '/verification_otp':(context) => VerificationOtpScreen(),
         '/confirmation':(context) => ConfirmationScreen(),
         '/home_page':(context) => HomePage()
@@ -46,7 +46,7 @@ void main() {
           labelLarge: TextStyle(fontSize: 14),
         ),
       ),
-      home: OnboardingScreen(),
+      // home: OnboardingScreen(),
     ),
   );
 }

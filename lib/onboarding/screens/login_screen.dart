@@ -50,6 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       context,
                       MaterialPageRoute(builder: (_) => ForgotPassword()),
                     );
+                    Navigator.pushNamed(context, '/forgot_password');
                   },
                   child: Text("Mot de passe oublié ?"),
                 ),

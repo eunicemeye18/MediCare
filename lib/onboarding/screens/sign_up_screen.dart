@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medicare/onboarding/screens/login_doctor_screen.dart';
-import 'package:medicare/onboarding/screens/login_screen.dart';
+// import 'package:medicare/onboarding/screens/login_screen.dart';
 import 'package:medicare/widgets/custom_elevated_button.dart';
 import 'package:medicare/widgets/custom_text_form_field.dart';
 
@@ -58,10 +58,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     Expanded(
                       child: TextButton(
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (_) => LoginScreen()),
-                          );
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(builder: (_) => LoginScreen()),
+                          // );
+                          Navigator.pushNamed(context, '/login');
                         },
                         child: Text(
                           "Se connecter",
