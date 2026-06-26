@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-// import 'package:medicare/onboarding/screens/login_doctor_screen.dart';
-// import 'package:medicare/onboarding/screens/login_screen.dart';
+// import 'package:go_router/go_router.dart';
+import 'package:medicare/onboarding/screens/login_doctor_screen.dart';
+import 'package:medicare/onboarding/screens/login_screen.dart';
 import 'package:medicare/widgets/custom_elevated_button.dart';
 import 'package:medicare/widgets/custom_text_form_field.dart';
 
@@ -59,14 +59,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     Expanded(
                       child: TextButton(
                         onPressed: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(builder: (_) => LoginScreen()),
-                          // );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (_) => LoginScreen()),
+                          );
 
                           // Navigator.pushNamed(context, '/login');
 
-                          context.go('/login');
+                          // context.go('/login');
                         },
                         child: Text(
                           "Se connecter",
@@ -82,14 +82,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 SizedBox(height: 20),
                 TextButton(
                   onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(builder: (_) => LoginDoctorScreen()),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => LoginDoctorScreen()),
+                    );
 
                     // Navigator.pushNamed(context, '/login_doctor');
 
-                    context.go('/login_doctor');
+                    // context.go('/login_doctor');
                   },
                   child: Text(
                     "Se connecter en tant que Médecin",

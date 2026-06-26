@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-// import 'package:medicare/onboarding/screens/verification_otp_screen.dart';
+// import 'package:go_router/go_router.dart';
+import 'package:medicare/onboarding/screens/verification_otp_screen.dart';
 import 'package:medicare/widgets/custom_elevated_button.dart';
 import 'package:medicare/widgets/custom_text_form_field.dart';
 
@@ -34,16 +34,16 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               CustomElevatedButton(
                 text: "Valider",
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (_) => VerificationOtpScreen()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => VerificationOtpScreen()),
+                  );
 
 
                   // Navigator.pushNamed(context, '/verification_otp');
 
 
-                  context.go('/verification_otp');
+                  // context.go('/verification_otp');
                 },
               ),
             ],

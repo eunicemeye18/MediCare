@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-// import 'package:medicare/onboarding/screens/forgot_password.dart';
+// import 'package:go_router/go_router.dart';
+import 'package:medicare/onboarding/screens/forgot_password.dart';
 import 'package:medicare/widgets/custom_elevated_button.dart';
 import 'package:medicare/widgets/custom_text_form_field.dart';
 
@@ -47,14 +47,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 20),
                 TextButton(
                   onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(builder: (_) => ForgotPassword()),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => ForgotPassword()),
+                    );
 
                     // Navigator.pushNamed(context, '/forgot_password');
 
-                    context.go('/forgot_password');
+                    // context.go('/forgot_password');
                   },
                   child: Text("Mot de passe oublié ?"),
                 ),
@@ -65,9 +65,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     Expanded(
                       child: TextButton(
                         onPressed: () {
-                          // Navigator.pop(context);
+                          Navigator.pop(context);
 
-                          context.go('/sign_up');
+                          // context.go('/sign_up');
                         },
                         child: Text(
                           "S'inscrire",

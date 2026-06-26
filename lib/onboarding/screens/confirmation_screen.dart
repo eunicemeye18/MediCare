@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-// import 'package:medicare/onboarding/screens/home_page.dart';
+// import 'package:go_router/go_router.dart';
+import 'package:medicare/onboarding/screens/home_page.dart';
 import 'package:medicare/widgets/custom_elevated_button.dart';
 import 'package:medicare/widgets/custom_text_form_field.dart';
 
@@ -43,17 +43,17 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
               CustomElevatedButton(
                 text: "Confirmer",
                 onPressed: () {
-                  //Navigation 1.0
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (_) => HomePage()),
-                  // );
+                  // Navigation 1.0
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => HomePage()),
+                  );
 
 
                   // Navigator.pushNamed(context, '/home_page');
 
                   
-                  context.go('/home_page');
+                  // context.go('/home_page');
                 },
               ),
             ],
