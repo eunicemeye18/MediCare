@@ -12,18 +12,9 @@ import 'package:medicare/onboarding/screens/verification_otp_screen.dart';
 final GoRouter router = GoRouter(
   initialLocation: '/',
   routes: [
-    GoRoute(
-      path: '/',
-      builder: (context, state) => OnboardingScreen(),
-    ),
-    GoRoute(
-      path: '/sign_up',
-      builder: (context, state) => SignUpScreen(),
-    ),
-    GoRoute(
-      path: '/login',
-      builder: (context, state) => LoginScreen(),
-    ),
+    GoRoute(path: '/', builder: (context, state) => OnboardingScreen()),
+    GoRoute(path: '/sign_up', builder: (context, state) => SignUpScreen()),
+    GoRoute(path: '/login', builder: (context, state) => LoginScreen()),
     GoRoute(
       path: '/login_doctor',
       builder: (context, state) => LoginDoctorScreen(),
@@ -40,16 +31,12 @@ final GoRouter router = GoRouter(
       path: '/confirmation',
       builder: (context, state) => ConfirmationScreen(),
     ),
-    GoRoute(
-      path: '/home_page',
-      builder: (context, state) => HomePage(),
-    ),
+    GoRoute(path: '/home_page', builder: (context, state) => HomePage()),
   ],
 );
 void main() {
   runApp(
     MaterialApp.router(
-
       // initialRoute: '/',
       // routes: {
       //   '/':(context) => OnboardingScreen(),
@@ -61,9 +48,7 @@ void main() {
       //   '/confirmation':(context) => ConfirmationScreen(),
       //   '/home_page':(context) => HomePage()
       // },
-
       routerConfig: router,
-
 
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -79,14 +64,15 @@ void main() {
             color: Colors.black,
           ),
           headlineMedium: TextStyle(fontSize: 28, fontFamily: 'Poppins'),
-          titleLarge: TextStyle(fontSize: 22),
+          titleLarge: TextStyle(fontSize: 24),
+          titleMedium: TextStyle(fontSize: 22),
+          titleSmall: TextStyle(fontSize: 20),
           bodyLarge: TextStyle(fontSize: 18, color: Colors.white),
           bodyMedium: TextStyle(fontSize: 16, fontFamily: 'inter'),
-          labelLarge: TextStyle(fontSize: 14),
+          bodySmall: TextStyle(fontSize: 14),
         ),
       ),
       // home: OnboardingScreen(),
     ),
-    
   );
 }

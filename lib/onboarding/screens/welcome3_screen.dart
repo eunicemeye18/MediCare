@@ -30,11 +30,11 @@ class _Welcome3ScreenState extends State<Welcome3Screen> {
                   textAlign: TextAlign.center,
                   style: Theme.of(
                     context,
-                  ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                  ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
                 ),
                 Text(
                   "consultations",
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     color: Theme.of(context).colorScheme.primary,
                     fontWeight: FontWeight.bold,
                   ),
@@ -44,7 +44,7 @@ class _Welcome3ScreenState extends State<Welcome3Screen> {
                   textAlign: TextAlign.center,
                   style: Theme.of(
                     context,
-                  ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                  ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 20),
                 Text(
