@@ -58,7 +58,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
                   const SizedBox(height: 20),
                   Text(
-                    "Prenez soin de votre santé grâce à une plateform simple, rapide et sécurisé.",
+                    "Prenez soin de votre santé grâce à une plateforme simple, rapide et sécurisé.",
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 20),

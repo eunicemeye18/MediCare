@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 20),
                 CustomTextFormField(
                   controller: passwordController,
-                  hintText: "Password",
+                  hintText: "Mot de pass",
                 ),
                 SizedBox(height: 20),
                 CustomElevatedButton(text: "Valider", onPressed: () {}),

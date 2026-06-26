@@ -23,7 +23,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                "Entrez votre email pour recevoir votre code de confimation",
+                "Entrez votre email pour recevoir votre code de confirmation",
               ),
               SizedBox(height: 20),
               CustomTextFormField(
