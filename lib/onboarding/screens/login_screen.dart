@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:go_router/go_router.dart';
-import 'package:medicare/onboarding/screens/forgot_password.dart';
+import 'package:go_router/go_router.dart';
+// import 'package:medicare/onboarding/screens/forgot_password.dart';
 import 'package:medicare/widgets/custom_elevated_button.dart';
 import 'package:medicare/widgets/custom_text_form_field.dart';
 
@@ -16,9 +16,9 @@ class _LoginScreenState extends State<LoginScreen> {
   final passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Padding(
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
           padding: const EdgeInsets.all(20),
           child: Center(
             child: Column(
@@ -40,21 +40,21 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 20),
                 CustomTextFormField(
                   controller: passwordController,
-                  hintText: "Mot de pass",
+                  hintText: "Mot de passe",
                 ),
                 SizedBox(height: 20),
                 CustomElevatedButton(text: "Valider", onPressed: () {}),
                 SizedBox(height: 20),
                 TextButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (_) => ForgotPassword()),
-                    );
-
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(builder: (_) => ForgotPassword()),
+                    // );
+            
                     // Navigator.pushNamed(context, '/forgot_password');
-
-                    // context.go('/forgot_password');
+            
+                    context.push('/forgot_password');
                   },
                   child: Text("Mot de passe oublié ?"),
                 ),
@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: TextButton(
                         onPressed: () {
                           Navigator.pop(context);
-
+            
                           // context.go('/sign_up');
                         },
                         child: Text(

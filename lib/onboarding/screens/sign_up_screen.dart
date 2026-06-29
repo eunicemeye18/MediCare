@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-// import 'package:go_router/go_router.dart';
-import 'package:medicare/onboarding/screens/login_doctor_screen.dart';
-import 'package:medicare/onboarding/screens/login_screen.dart';
+import 'package:go_router/go_router.dart';
+// import 'package:medicare/onboarding/screens/login_doctor_screen.dart';
+// import 'package:medicare/onboarding/screens/login_screen.dart';
 import 'package:medicare/widgets/custom_elevated_button.dart';
 import 'package:medicare/widgets/custom_text_form_field.dart';
 
@@ -19,9 +19,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(20),
             child: Column(
@@ -38,7 +38,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 SizedBox(height: 50),
                 CustomTextFormField(
                   controller: nameController,
-                  hintText: "Nom",
+                  hintText: "Nom complet",
                 ),
                 SizedBox(height: 20),
                 CustomTextFormField(
@@ -48,7 +48,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 SizedBox(height: 20),
                 CustomTextFormField(
                   controller: passwordController,
-                  hintText: "Mot de pass",
+                  hintText: "Mot de passe",
+                ),
+                SizedBox(height: 20),
+                CustomTextFormField(
+                  controller: passwordController,
+                  hintText: "Confirmer votre mot de passe",
                 ),
                 SizedBox(height: 20),
                 CustomElevatedButton(text: "S'inscrire", onPressed: () {}),
@@ -59,14 +64,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     Expanded(
                       child: TextButton(
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (_) => LoginScreen()),
-                          );
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(builder: (_) => LoginScreen()),
+                          // );
 
                           // Navigator.pushNamed(context, '/login');
 
-                          // context.go('/login');
+                          context.push('/login');
                         },
                         child: Text(
                           "Se connecter",
@@ -82,14 +87,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 SizedBox(height: 20),
                 TextButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (_) => LoginDoctorScreen()),
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(builder: (_) => LoginDoctorScreen()),
+                    // );
 
                     // Navigator.pushNamed(context, '/login_doctor');
 
-                    // context.go('/login_doctor');
+                    context.push('/login_doctor');
                   },
                   child: Text(
                     "Se connecter en tant que Médecin",

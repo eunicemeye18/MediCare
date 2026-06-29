@@ -3,6 +3,7 @@ import 'package:medicare/onboarding/screens/sign_up_screen.dart';
 import 'package:medicare/onboarding/screens/welcome2_screen.dart';
 import 'package:medicare/onboarding/screens/welcome3_screen.dart';
 import 'package:medicare/onboarding/screens/welcome_screen.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -13,6 +14,7 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _pageController = PageController();
+  int currentPage = 0;
 
   void _nextPage() {
     _pageController.nextPage(
@@ -36,13 +38,39 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        controller: _pageController,
-        physics: NeverScrollableScrollPhysics(), // désactive le swipe manuel
+      body: Stack(
         children: [
-          WelcomeScreen(onNext: _nextPage, onFinish: _finish),
-          Welcome2Screen(onNext: _nextPage, onFinish: _finish),
-          Welcome3Screen(onFinish: _finish),
+          PageView(
+            controller: _pageController,
+            // physics: NeverScrollableScrollPhysics(), // désactive le swipe manuel
+            onPageChanged: (index) {
+              setState(() {
+                currentPage = index;
+              });
+            },
+            children: [
+              WelcomeScreen(onNext: _nextPage, onFinish: _finish),
+              Welcome2Screen(onNext: _nextPage, onFinish: _finish),
+              Welcome3Screen(onFinish: _finish),
+            ],
+          ),
+          Positioned(
+            bottom: 80,
+            left: 0,
+            right: 0,
+            child: Center(
+              child: SmoothPageIndicator(
+                controller: _pageController,
+                count: 3,
+                effect: WormEffect(
+                  dotHeight: 10,
+                  dotWidth: 10,
+                  activeDotColor: Theme.of(context).colorScheme.secondary,
+                  dotColor: Colors.grey.shade300,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:go_router/go_router.dart';
-import 'package:medicare/onboarding/screens/confirmation_screen.dart';
+import 'package:go_router/go_router.dart';
+// import 'package:medicare/onboarding/screens/confirmation_screen.dart';
 import 'package:medicare/widgets/custom_elevated_button.dart';
 import 'package:pinput/pinput.dart';
 
@@ -14,9 +14,9 @@ class VerificationOtpScreen extends StatefulWidget {
 class _VerificationOtpScreenState extends State<VerificationOtpScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Padding(
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
           padding: const EdgeInsets.all(20),
           child: Center(
             child: Column(
@@ -35,16 +35,16 @@ class _VerificationOtpScreenState extends State<VerificationOtpScreen> {
                 CustomElevatedButton(
                   text: "Confirmer",
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (_) => ConfirmationScreen()),
-                    );
-
-
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(builder: (_) => ConfirmationScreen()),
+                    // );
+            
+            
                     // Navigator.pushNamed(context, '/confirmation');
-
-
-                    // context.go('/confirmation');
+            
+            
+                    context.push('/confirmation');
                   },
                 ),
               ],

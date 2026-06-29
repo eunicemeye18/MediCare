@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:go_router/go_router.dart';
-import 'package:medicare/onboarding/screens/home_page.dart';
+import 'package:go_router/go_router.dart';
+// import 'package:medicare/onboarding/screens/home_page.dart';
 import 'package:medicare/widgets/custom_elevated_button.dart';
 import 'package:medicare/widgets/custom_text_form_field.dart';
 
@@ -15,45 +15,45 @@ class _ConfirmationScreenState extends State<ConfirmationScreen> {
   final passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Padding(
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
               Text(
-                'Nouveau mot de pass',
+                'Nouveau mot de passe',
                 style: Theme.of(
                   context,
                 ).textTheme.displayLarge?.copyWith(fontSize: 30),
               ),
-
-              Text("Entrer votre nouveau mot de pass"),
+            
+              Text("Entrer votre nouveau mot de passe"),
               SizedBox(height: 20),
               CustomTextFormField(
                 controller: passwordController,
-                hintText: "Nouveau mot de pass",
+                hintText: "Nouveau mot de passe",
               ),
               SizedBox(height: 20),
               CustomTextFormField(
                 controller: passwordController,
-                hintText: "Confirmez votre mot de pass",
+                hintText: "Confirmez votre mot de passe",
               ),
               SizedBox(height: 20),
               CustomElevatedButton(
                 text: "Confirmer",
                 onPressed: () {
                   // Navigation 1.0
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => HomePage()),
-                  );
-
-
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (_) => HomePage()),
+                  // );
+            
+            
                   // Navigator.pushNamed(context, '/home_page');
-
+            
                   
-                  // context.go('/home_page');
+                  context.push('/home_page');
                 },
               ),
             ],

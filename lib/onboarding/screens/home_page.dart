@@ -10,9 +10,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Center(
+    return Scaffold(
+      body: SafeArea(
+        child: Center(
           child: Column(
             children: [
               Image.asset('assets/images/logo.png', width: 200, height: 200),
@@ -27,6 +27,27 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
+        
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home), 
+            label: "Accueil"
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite), 
+            label: "Favoris"
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.work), 
+            label: "Activités"
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person), 
+            label: "Profil"
+          ),
+        ],
       ),
     );
   }
