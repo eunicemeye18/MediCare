@@ -1,6 +1,42 @@
-# README — Les trois méthodes de navigation en Flutter
-
 # Application : Medicare
+
+# README — Intérêt d’un widget réutilisable
+
+Un widget réutilisable est un composant d’interface autonome conçu pour être utilisé dans plusieurs pages ou applications sans être recodé.
+
+## Pourquoi l’utiliser ?
+
+### 1. Réduction du temps de développement
+
+Une fois créé, le widget peut être réutilisé partout, ce qui évite de réécrire la même logique plusieurs fois.
+
+### 2. Cohérence de l’interface
+
+Tous les écrans utilisant le widget conservent le même comportement et le même style, ce qui améliore l’expérience utilisateur.
+
+### 3. Maintenance simplifiée
+
+Une modification du widget se répercute automatiquement sur toutes ses occurrences, réduisant les corrections multiples et les risques d’incohérences.
+
+### 4. Meilleure organisation du code
+
+Les widgets encouragent une architecture modulaire, plus facile à lire, tester et faire évoluer.
+
+### 5. Réutilisation et scalabilité
+
+Ils permettent de construire rapidement des interfaces complexes à partir de blocs standards.
+
+## Conclusion
+
+Utiliser des widgets réutilisables permet de gagner en productivité, en qualité et en maintenabilité dans le développement d’interfaces modernes.
+
+
+
+
+
+
+# Les trois méthodes de navigation en Flutter
+
 
 ## Introduction
 
