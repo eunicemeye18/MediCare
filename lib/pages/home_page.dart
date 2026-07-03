@@ -200,7 +200,14 @@ class _HomePageState extends State<HomePage> {
                   ),
                   itemBuilder: (context, index) {
                     final doctor = doctors[index];
-                    return DoctorCard(doctor: doctor);
+                    return DoctorCard(
+                      doctor: doctor,
+                      onFavoritePressed: () {
+                        setState(() {
+                          doctor.isFavorite = !doctor.isFavorite;
+                        });
+                      },
+                    );
                   },
                 ),
               ),

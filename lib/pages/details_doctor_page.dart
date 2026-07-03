@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:medicare/models/doctor.dart';
 
 class DetailsDoctorPage extends StatefulWidget {
-  const DetailsDoctorPage({super.key});
+  final Doctor doctor;
+  const DetailsDoctorPage({super.key, required this.doctor});
 
   @override
   State<DetailsDoctorPage> createState() => _DetailsDoctorPageState();
@@ -39,14 +41,14 @@ class _DetailsDoctorPageState extends State<DetailsDoctorPage> {
               ),
               ClipRRect(
                 child: Image.asset(
-                  "assets/images/doctorProfile1.jpg",
+                  widget.doctor.image,
                   width: 500,
                   height: 200,
                   fit: BoxFit.cover,
                 ),
               ),
               Text(
-                "Dr RUMI",
+                widget.doctor.name,
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
@@ -58,7 +60,7 @@ class _DetailsDoctorPageState extends State<DetailsDoctorPage> {
                   Icon(Icons.star, size: 18, color: Colors.amber),
                   Icon(Icons.star, size: 18, color: Colors.amber),
                   Icon(Icons.star, size: 18, color: Colors.amber),
-                  Text("4.8"),
+                  Text("${widget.doctor.rating}"),
                 ],
               ),
               Padding(
@@ -77,7 +79,7 @@ class _DetailsDoctorPageState extends State<DetailsDoctorPage> {
                         ),
                       ),
                       child: Text(
-                        "Cardiologue",
+                        widget.doctor.speciality,
                         style: TextStyle(
                           color: Theme.of(context).colorScheme.secondary,
                         ),
@@ -159,9 +161,7 @@ class _DetailsDoctorPageState extends State<DetailsDoctorPage> {
                   context,
                 ).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
               ),
-              Text(
-                "Cardiologue expérimenté avec plus de 10 ans de pratique. Reconnu pour son écoute et son professionnalisme, elle accompagne ses patients avec des soins personnalisés et un suivi de qualité.",
-              ),
+              Text(widget.doctor.description ?? ""),
               Divider(),
               Text(
                 "Disponibilités",

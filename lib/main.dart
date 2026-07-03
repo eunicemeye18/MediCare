@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicare/models/doctor.dart';
 import 'package:medicare/onboarding/screens/onboarding_screens.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medicare/onboarding/screens/confirmation_screen.dart';
@@ -34,35 +35,36 @@ final GoRouter router = GoRouter(
     ),
     GoRoute(
       path: '/details_doctor',
-      builder: (context, state) => DetailsDoctorPage(),
+      builder: (context, state) {
+        final doctor = state.extra as Doctor;
+
+        return DetailsDoctorPage(doctor: doctor);
+      },
     ),
     GoRoute(
       path: '/list_doctor',
       builder: (context, state) => ListDoctorsPage(),
     ),
     ShellRoute(
-  builder: (context, state, child) {
-    return ShellPage(child: child);
-  },
-  routes: [
-    GoRoute(
-      path: '/home',
-      builder: (context, state) => const HomePage(),
+      builder: (context, state, child) {
+        return ShellPage(child: child);
+      },
+      routes: [
+        GoRoute(path: '/home', builder: (context, state) => const HomePage()),
+        GoRoute(
+          path: '/favorites',
+          builder: (context, state) => const FavoritesPage(),
+        ),
+        GoRoute(
+          path: '/activities',
+          builder: (context, state) => const ActivitiesPage(),
+        ),
+        GoRoute(
+          path: '/profile',
+          builder: (context, state) => const ProfilePage(),
+        ),
+      ],
     ),
-    GoRoute(
-      path: '/favorites',
-      builder: (context, state) => const FavoritesPage(),
-    ),
-    GoRoute(
-      path: '/activities',
-      builder: (context, state) => const ActivitiesPage(),
-    ),
-    GoRoute(
-      path: '/profile',
-      builder: (context, state) => const ProfilePage(),
-    ),
-  ],
-),
   ],
 );
 void main() {

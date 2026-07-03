@@ -14,7 +14,7 @@ class DoctorCard extends StatelessWidget {
       elevation: 4,
       child: InkWell(
         onTap: () {
-          context.push('/details_doctor');
+          context.push('/details_doctor', extra: doctor);
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

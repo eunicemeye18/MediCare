@@ -14,28 +14,41 @@ class _ListDoctorsPageState extends State<ListDoctorsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Text(
-          "Listes des Médecins",
-          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Text(
+              "Listes des Médecins",
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Expanded(
+              child: GridView.builder(
+                padding: EdgeInsets.all(8),
+                itemCount: doctors.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 12,
+                  mainAxisSpacing: 12,
+                  childAspectRatio: 3 / 4,
+                ),
+                itemBuilder: (context, index) {
+                  final doctor = doctors[index];
+                  return DoctorCard(
+                    doctor: doctor,
+                    onFavoritePressed: () {
+                      setState(() {
+                        doctor.isFavorite = !doctor.isFavorite;
+                      });
+                    },
+                  );
+                },
+              ),
+            ),
+          ],
         ),
-      ),
-      body: GridView.builder(
-        padding: EdgeInsets.all(8),
-        itemCount: doctors.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 12,
-          mainAxisSpacing: 12,
-          childAspectRatio: 3 / 4,
-        ),
-        itemBuilder: (context, index) {
-          final doctor = doctors[index];
-          return DoctorCard(doctor: doctor);
-        },
       ),
     );
   }

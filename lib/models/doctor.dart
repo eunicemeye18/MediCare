@@ -3,6 +3,7 @@ class Doctor {
   final String name;
   final String speciality;
   final double rating;
+  final String? description;
   bool isFavorite;
 
   Doctor({
@@ -10,6 +11,7 @@ class Doctor {
     required this.name,
     required this.speciality,
     required this.rating,
-    this.isFavorite = false,
+    this.description,
+    this.isFavorite = false, 
   });
 }
