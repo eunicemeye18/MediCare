@@ -35,7 +35,7 @@ class _ShellPageState extends State<ShellPage> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) => setCurrentIndex(index),
-        selectedItemColor: Theme.of(context).colorScheme.secondary,
+        selectedItemColor: Theme.of(context).colorScheme.primary,
         unselectedItemColor: Colors.grey,
         iconSize: 28,
         items: const [

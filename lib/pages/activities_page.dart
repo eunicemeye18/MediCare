@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicare/widgets/custom_elevated_button.dart';
 
 class ActivitiesPage extends StatefulWidget {
   const ActivitiesPage({super.key});

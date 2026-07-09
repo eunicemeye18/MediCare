@@ -21,10 +21,9 @@ class _FavoritesPageState extends State<FavoritesPage> {
           children: [
             Text(
               "Favoris",
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(
+                context,
+              ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
             ),
             Expanded(
               child: GridView.builder(

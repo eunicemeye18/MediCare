@@ -35,10 +35,10 @@ class _HomePageState extends State<HomePage> {
                               style: Theme.of(context).textTheme.bodyMedium
                                   ?.copyWith(color: Colors.grey),
                             ),
-                            SizedBox(height: 4),
+                            SizedBox(height: 1),
                             Text(
                               "Jean Dupont",
-                              style: Theme.of(context).textTheme.titleLarge
+                              style: Theme.of(context).textTheme.titleMedium
                                   ?.copyWith(fontWeight: FontWeight.bold),
                             ),
                           ],
@@ -51,6 +51,19 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
+                  SizedBox(height: 8),
+                  Row(
+                    children: [
+                      Text(
+                        "Prochain rendez-vous",
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 8),
                   Container(
                     padding: EdgeInsets.all(18),
                     decoration: BoxDecoration(
@@ -63,10 +76,6 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Votre prochain rendez-vous",
-                          style: TextStyle(color: Colors.white),
-                        ),
                         SizedBox(height: 5),
                         Row(
                           children: [
@@ -85,26 +94,28 @@ class _HomePageState extends State<HomePage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
+                                    '01/07/2026 | 10:30',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  SizedBox(width: 5),
+                                  Text(
                                     'Dr RUMI',
                                     style: Theme.of(context)
                                         .textTheme
                                         .bodyMedium
                                         ?.copyWith(
                                           color: Colors.white,
-                                          fontWeight: FontWeight.bold,
+                                          // fontWeight: FontWeight.bold,
                                         ),
-                                  ),
-                                  Text(
-                                    'Cardiologue',
-                                    style: TextStyle(color: Colors.white),
                                   ),
                                   Row(
                                     children: [
                                       Text(
-                                        '01/07/2026 | 10:30',
+                                        'Cardiologue',
                                         style: TextStyle(color: Colors.white),
                                       ),
                                       SizedBox(width: 5),
+
                                       TextButton(
                                         onPressed: () {},
                                         style: TextButton.styleFrom(
@@ -163,8 +174,8 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Expanded(
                         child: Text(
-                          'Médecins',
-                          style: Theme.of(context).textTheme.bodyLarge
+                          'Médecins recommandés',
+                          style: Theme.of(context).textTheme.bodyMedium
                               ?.copyWith(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,

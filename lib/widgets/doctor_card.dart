@@ -11,7 +11,7 @@ class DoctorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 4,
+      elevation: 2,
       child: InkWell(
         onTap: () {
           context.push('/details_doctor', extra: doctor);
@@ -22,16 +22,20 @@ class DoctorCard extends StatelessWidget {
             Expanded(
               child: Stack(
                 children: [
-                  Image.asset(
-                    doctor.image,
-                    fit: BoxFit.cover,
-                    width: double.infinity,
+                  ClipRRect(
+                    borderRadius: BorderRadiusGeometry.circular(12),
+                    child: Image.asset(
+                      doctor.image,
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                    ),
                   ),
                   Positioned(
                     right: 0,
                     top: 0,
                     child: IconButton(
                       onPressed: onFavoritePressed,
+                      style: IconButton.styleFrom(elevation: 4),
                       icon: Icon(
                         doctor.isFavorite
                             ? Icons.favorite

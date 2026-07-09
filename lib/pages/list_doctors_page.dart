@@ -14,16 +14,17 @@ class _ListDoctorsPageState extends State<ListDoctorsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Listes des Médecins",
+           style: Theme.of(
+                  context,
+                ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: [
-            Text(
-              "Listes des Médecins",
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
             Expanded(
               child: GridView.builder(
                 padding: EdgeInsets.all(8),
