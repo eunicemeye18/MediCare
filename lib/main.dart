@@ -10,10 +10,12 @@ import 'package:medicare/onboarding/screens/verification_otp_screen.dart';
 import 'package:medicare/pages/activities_page.dart';
 import 'package:medicare/pages/details_doctor_page.dart';
 import 'package:medicare/pages/favorites_page.dart';
+import 'package:medicare/pages/historical_page.dart';
 import 'package:medicare/pages/home_page.dart';
 import 'package:medicare/pages/list_doctors_page.dart';
 import 'package:medicare/pages/profile_page.dart';
 import 'package:medicare/pages/shell_page.dart';
+import 'package:medicare/pages/summary_screen_page.dart';
 
 final GoRouter router = GoRouter(
   initialLocation: '/',
@@ -44,6 +46,14 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/list_doctor',
       builder: (context, state) => ListDoctorsPage(),
+    ),
+    GoRoute(
+      path: '/historical_page',
+      builder: (context, state) => HistoricalPage(),
+    ),
+    GoRoute(
+      path: '/summary_page',
+      builder: (context, state) => SummaryScreenPage(),
     ),
     ShellRoute(
       builder: (context, state, child) {

@@ -33,6 +33,7 @@ class _Welcome2ScreenState extends State<Welcome2Screen> {
                   child: Column(
                     children: [
                       Container(
+                    margin: EdgeInsets.all(8),
                     width: 800,
                     height: 300,
                     decoration: BoxDecoration(

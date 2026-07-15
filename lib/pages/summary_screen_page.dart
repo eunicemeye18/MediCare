@@ -23,7 +23,7 @@ class SummaryScreenPage extends StatefulWidget {
 //     case PENDING_PAYMENT:
 //       debugPrint(PENDING_PAYMENT);
 //       break;
-      
+
 //     case PAYMENT_SUCCESS:
 //       Navigator.pop(context);
 //       // Navigator.push(
@@ -43,31 +43,29 @@ class SummaryScreenPage extends StatefulWidget {
 //   }
 // }
 
-
 class _SummaryScreenPageState extends State<SummaryScreenPage> {
-//   final kkiapay = KKiaPay(
-//     amount: 1000,//
-//     countries: ["BJ","CI","SN","TG"],//
-//     phone: "22961000000",//
-//     name: "Jean Dupont",//
-//     email: "email@mail.com",//
-//     reason: 'Transaction reason',//
-//     data: 'Fake data',//
-//     sandbox: true,//
-//     apikey: "a6d813f07b6811f19912d9ce7c383189",//
-//     callback: callback,//
-//     theme: defaultTheme, // Ex : "#222F5A",
-//     partnerId: 'AxXxXXxId',//
-//     paymentMethods: ["momo","card"]//
-// );
+  //   final kkiapay = KKiaPay(
+  //     amount: 1000,//
+  //     countries: ["BJ","CI","SN","TG"],//
+  //     phone: "22961000000",//
+  //     name: "Jean Dupont",//
+  //     email: "email@mail.com",//
+  //     reason: 'Transaction reason',//
+  //     data: 'Fake data',//
+  //     sandbox: true,//
+  //     apikey: "a6d813f07b6811f19912d9ce7c383189",//
+  //     callback: callback,//
+  //     theme: defaultTheme, // Ex : "#222F5A",
+  //     partnerId: 'AxXxXXxId',//
+  //     paymentMethods: ["momo","card"]//
+  // );
 
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Récapitulatif de rendez-vous",
+          "Détails de la consultation",
           style: Theme.of(
             context,
           ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),

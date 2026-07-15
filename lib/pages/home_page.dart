@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medicare/data/doctor_data.dart';
+import 'package:medicare/widgets/custom_image_assets.dart';
 import 'package:medicare/widgets/custom_text_form_field.dart';
 import 'package:medicare/widgets/doctor_card.dart';
 
@@ -64,84 +65,74 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   SizedBox(height: 8),
-                  Container(
-                    padding: EdgeInsets.all(18),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      // color: Theme.of(context).colorScheme.secondary,
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFF0D47A1), Color(0xFF00BCD4)],
-                      ),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: 5),
-                        Row(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(15),
-                              child: Image.asset(
-                                "assets/images/doctorProfile1.jpg",
-                                width: 60,
-                                height: 80,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            SizedBox(width: 10),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    '01/07/2026 | 10:30',
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  SizedBox(width: 5),
-                                  Text(
-                                    'Dr RUMI',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium
-                                        ?.copyWith(
-                                          color: Colors.white,
-                                          // fontWeight: FontWeight.bold,
-                                        ),
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text(
-                                        'Cardiologue',
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      SizedBox(width: 5),
-
-                                      TextButton(
-                                        onPressed: () {},
-                                        style: TextButton.styleFrom(
-                                          padding: EdgeInsets.all(4),
-                                          backgroundColor: Colors.green,
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadiusGeometry.circular(
-                                                  20,
-                                                ),
-                                          ),
-                                        ),
-                                        child: Text(
-                                          "Payé",
-                                          style: TextStyle(color: Colors.white),
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
+                  InkWell(
+                    onTap: () {
+                      context.push('/summary_page');
+                    },
+                    child: Container(
+                      padding: EdgeInsets.all(14),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        // color: Theme.of(context).colorScheme.secondary,
+                        gradient: const LinearGradient(
+                          colors: [Color(0xFF0D47A1), Color(0xFF00BCD4)],
                         ),
-                      ],
+                      ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(width: 8),
+                              CustomImageAssets(height: 72, width: 72),
+                              SizedBox(width: 12),
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    SizedBox(height: 8),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          "21 Nov.2026  ",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge
+                                              ?.copyWith(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white,
+                                              ),
+                                        ),
+                                        SizedBox(width: 5),
+                                        Text(
+                                          "10:30",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge
+                                              ?.copyWith(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white,
+                                              ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(height: 8),
+                                    Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Expanded(
+                                          child: Text("Dr RUMI • Cardiologue"),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(height: 20),
@@ -201,6 +192,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Expanded(
                 child: GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
                   padding: EdgeInsets.all(8),
                   itemCount: doctors.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

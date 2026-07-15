@@ -28,19 +28,20 @@ class _Welcome3ScreenState extends State<Welcome3Screen> {
                   child: Column(
                     children: [
                       Container(
-                    width: 800,
-                    height: 300,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Image.asset(
-                        'assets/images/welcome3.jpg',
-                        fit: BoxFit.cover,
+                        margin: EdgeInsets.all(8),
+                        width: 800,
+                        height: 300,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset(
+                            'assets/images/welcome3.jpg',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
                       SizedBox(height: 20),
                       Text(
                         "Payez vos",

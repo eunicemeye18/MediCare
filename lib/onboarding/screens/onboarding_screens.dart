@@ -30,6 +30,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     Navigator.push(context, MaterialPageRoute(builder: (_) => SignUp()));
   }
 
+  void _next() {
+    if (currentPage == 2) {
+      Navigator.push(context, MaterialPageRoute(builder: (_) => SignUp()));
+    } else {
+      _nextPage();
+    }
+  }
+  
   @override
   void dispose() {
     _pageController.dispose();
@@ -70,7 +78,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               ),
             ),
             const SizedBox(height: 20),
-            CustomElevatedButton(text: "Suivant", onPressed: _nextPage),
+            CustomElevatedButton(text: "Suivant", onPressed: _next),
             const SizedBox(height: 20),
           ],
         ),

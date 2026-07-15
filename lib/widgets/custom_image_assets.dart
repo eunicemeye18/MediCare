@@ -3,15 +3,14 @@ import 'package:flutter/material.dart';
 class CustomImageAssets extends StatelessWidget {
   final double? width;
   final double? height;
-  final BorderRadiusGeometry borderRadius = BorderRadius.zero;
-  const CustomImageAssets({super.key, this.width, this.height, required BorderRadiusGeometry borderRadius});
+  const CustomImageAssets({super.key, this.width, this.height});
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: borderRadius,
+      borderRadius: BorderRadiusGeometry.all(Radius.circular(12)),
       child: Image.asset(
-        "assets/images/profile.jpg",
+        "assets/images/doctorProfile1.jpg",
         width: width,
         height: height,
         fit: BoxFit.cover,

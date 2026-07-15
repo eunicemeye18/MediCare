@@ -31,6 +31,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               child: Column(
                 children: [
                   Container(
+                    margin: EdgeInsets.all(8),
                     width: 800,
                     height: 300,
                     decoration: BoxDecoration(
