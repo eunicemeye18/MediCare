@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:medicare/widgets/historical_card.dart';
 
 class HistoricalPage extends StatefulWidget {
   const HistoricalPage({super.key});
