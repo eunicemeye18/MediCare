@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -70,7 +71,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 child: Column(
                   children: [
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.push('/profile_modification');
+                      },
                       style: TextButton.styleFrom(iconColor: Colors.black),
                       child: Row(
                         children: [
