@@ -16,6 +16,7 @@ import 'package:medicare/pages/list_doctors_page.dart';
 import 'package:medicare/pages/profile_modificaton_page.dart';
 import 'package:medicare/pages/profile_page.dart';
 import 'package:medicare/pages/shell_page.dart';
+import 'package:medicare/pages/success_page_screen.dart';
 import 'package:medicare/pages/summary_screen_page.dart';
 
 final GoRouter router = GoRouter(
@@ -59,6 +60,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/profile_modification',
       builder: (context, state) => ProfileModificatonPage(),
+    ),
+    GoRoute(
+      path: '/success_page',
+      builder: (context, state) => SuccessPageScreen(),
     ),
     ShellRoute(
       builder: (context, state, child) {

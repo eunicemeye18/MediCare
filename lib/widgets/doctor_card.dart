@@ -35,7 +35,7 @@ class DoctorCard extends StatelessWidget {
                     top: 0,
                     child: IconButton(
                       onPressed: onFavoritePressed,
-                      style: IconButton.styleFrom(elevation: 4),
+                      style: IconButton.styleFrom(elevation: 12),
                       icon: Icon(
                         doctor.isFavorite
                             ? Icons.favorite

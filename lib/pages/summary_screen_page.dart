@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:kkiapay_flutter_sdk/kkiapay_flutter_sdk.dart';
+import 'package:medicare/pages/success_page_screen.dart';
 import 'package:medicare/widgets/custom_elevated_button.dart';
 // import 'package:kkiapay_flutter_sdk/kkiapay_flutter_sdk.dart';
 
@@ -8,57 +10,52 @@ class SummaryScreenPage extends StatefulWidget {
   @override
   State<SummaryScreenPage> createState() => _SummaryScreenPageState();
 }
-// void callback(response, context) {
-//   switch ( response['status'] ) {
 
-//     case PAYMENT_CANCELLED:
-//       Navigator.pop(context);
-//       debugPrint(PAYMENT_CANCELLED);
-//     break;
+void callback(response, context) {
+  switch (response['status']) {
+    case PAYMENT_CANCELLED:
+      Navigator.pop(context);
+      debugPrint(PAYMENT_CANCELLED);
+      break;
 
-//     case PAYMENT_INIT:
-//       debugPrint(PAYMENT_INIT);
-//       break;
+    case PAYMENT_INIT:
+      debugPrint(PAYMENT_INIT);
+      break;
 
-//     case PENDING_PAYMENT:
-//       debugPrint(PENDING_PAYMENT);
-//       break;
+    case PENDING_PAYMENT:
+      debugPrint(PENDING_PAYMENT);
+      break;
 
-//     case PAYMENT_SUCCESS:
-//       Navigator.pop(context);
-//       // Navigator.push(
-//       //   context,
-//       //   MaterialPageRoute(
-//       //     builder: (context) => SuccessScreen(
-//       //       amount: response['requestData']['amount'],
-//       //       transactionId: response['transactionId'],
-//       //     ),
-//       //   ),
-//       // );
-//       break;
+    case PAYMENT_SUCCESS:
+      // Navigator.pop(context);
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => SuccessPageScreen()),
+      );
+      break;
 
-//     default:
-//       debugPrint(UNKNOWN_EVENT);
-//       break;
-//   }
-// }
+    default:
+      debugPrint(UNKNOWN_EVENT);
+      break;
+  }
+}
 
 class _SummaryScreenPageState extends State<SummaryScreenPage> {
-  //   final kkiapay = KKiaPay(
-  //     amount: 1000,//
-  //     countries: ["BJ","CI","SN","TG"],//
-  //     phone: "22961000000",//
-  //     name: "Jean Dupont",//
-  //     email: "email@mail.com",//
-  //     reason: 'Transaction reason',//
-  //     data: 'Fake data',//
-  //     sandbox: true,//
-  //     apikey: "a6d813f07b6811f19912d9ce7c383189",//
-  //     callback: callback,//
-  //     theme: defaultTheme, // Ex : "#222F5A",
-  //     partnerId: 'AxXxXXxId',//
-  //     paymentMethods: ["momo","card"]//
-  // );
+  final kkiapay = KKiaPay(
+    amount: 1000, //
+    countries: ["BJ", "CI", "SN", "TG"], //
+    phone: "22961000000", //
+    name: "Jean Dupont", //
+    email: "email@mail.com", //
+    reason: 'Transaction reason', //
+    data: 'Fake data', //
+    sandbox: true, //
+    apikey: "a6d813f07b6811f19912d9ce7c383189", //
+    callback: callback, //
+    theme: defaultTheme, // Ex : "#222F5A",
+    partnerId: 'AxXxXXxId', //
+    paymentMethods: ["momo", "card"], //
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -265,7 +262,10 @@ class _SummaryScreenPageState extends State<SummaryScreenPage> {
             CustomElevatedButton(
               text: "Procéder au paiement",
               onPressed: () {
-                // Navigator.push( context, MaterialPageRoute(builder: (context) => kkiapay), );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => kkiapay),
+                );
               },
             ),
           ],
