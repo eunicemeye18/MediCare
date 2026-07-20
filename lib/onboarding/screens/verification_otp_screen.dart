@@ -1,0 +1,76 @@
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+// import 'package:medicare/onboarding/screens/confirmation_screen.dart';
+import 'package:medicare_v2/widgets/custom_elevated_button.dart';
+import 'package:pinput/pinput.dart';
+
+class VerificationOtpScreen extends StatefulWidget {
+  const VerificationOtpScreen({super.key});
+
+  @override
+  State<VerificationOtpScreen> createState() => _VerificationOtpScreenState();
+}
+
+class _VerificationOtpScreenState extends State<VerificationOtpScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            context.pop();
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
+      ),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Center(
+            child: Column(
+              children: [
+                Image.asset('assets/images/icon.png', width: 100, height: 100),
+                SizedBox(height: 40),
+                Text(
+                  'Code de confirmation',
+                  style: Theme.of(
+                    context,
+                  ).textTheme.displayLarge?.copyWith(fontSize: 30),
+                ),
+                SizedBox(height: 20),
+                Text("Entrer le code que vous avez reçu"),
+                SizedBox(height: 20),
+                Pinput(length: 6),
+                SizedBox(height: 20),
+                CustomElevatedButton(
+                  text: "Confirmer",
+                  onPressed: () {
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(builder: (_) => ConfirmationScreen()),
+                    // );
+
+                    // Navigator.pushNamed(context, '/confirmation');
+
+                    context.push('/confirmation');
+                  },
+                ),
+                SizedBox(height: 20),
+                Text("Renvoyer le code de confirmation"),
+                Row(
+                  children: [
+                    Text(
+                      "02:00",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    TextButton(onPressed: () {}, child: Text("Renvoyer")),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
