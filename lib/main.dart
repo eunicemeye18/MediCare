@@ -1,6 +1,12 @@
 import 'package:feda_flutter/feda_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:medicare_v2/config/fedapay_config.dart';
+import 'package:medicare_v2/doctors/screens/bottom_navigation_page.dart';
+import 'package:medicare_v2/doctors/screens/details_appointment_screen.dart';
+import 'package:medicare_v2/doctors/screens/disponibility_screen.dart';
+import 'package:medicare_v2/doctors/screens/historical_screen.dart';
+import 'package:medicare_v2/doctors/screens/home_screen.dart';
+import 'package:medicare_v2/doctors/screens/profile_screen.dart';
 import 'package:medicare_v2/models/doctor.dart';
 import 'package:medicare_v2/onboarding/screens/onboarding_screens.dart';
 import 'package:go_router/go_router.dart';
@@ -67,6 +73,11 @@ final GoRouter router = GoRouter(
       path: '/success_page',
       builder: (context, state) => SuccessPageScreen(),
     ),
+    GoRoute(
+      path: '/details_appointment',
+      builder: (context, state) => DetailsAppointmentScreen(),
+    ),
+
     ShellRoute(
       builder: (context, state, child) {
         return ShellPage(child: child);
@@ -87,16 +98,38 @@ final GoRouter router = GoRouter(
         ),
       ],
     ),
+    ShellRoute(
+      builder: (context, state, child) {
+        return BottomNavigationPage();
+      },
+      routes: [
+        GoRoute(
+          path: '/home_screen',
+          builder: (context, state) => HomeScreen(),
+        ),
+        GoRoute(
+          path: '/disponibility_screen',
+          builder: (context, state) => DisponibilityScreen(),
+        ),
+        GoRoute(
+          path: '/historical_screen',
+          builder: (context, state) => HistoricalScreen(),
+        ),
+        GoRoute(
+          path: '/profile_screen',
+          builder: (context, state) => ProfileScreen(),
+        ),
+      ],
+    ),
   ],
 );
 void main() {
-    WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
 
   FedaFlutter.applyConfig(
     apiKey: FedaPayConfig.apiKey,
     environment: ApiEnvironment.sandbox,
   );
-
 
   runApp(
     // MaterialApp(
