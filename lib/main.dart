@@ -1,4 +1,6 @@
+import 'package:feda_flutter/feda_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:medicare_v2/config/fedapay_config.dart';
 import 'package:medicare_v2/models/doctor.dart';
 import 'package:medicare_v2/onboarding/screens/onboarding_screens.dart';
 import 'package:go_router/go_router.dart';
@@ -88,6 +90,14 @@ final GoRouter router = GoRouter(
   ],
 );
 void main() {
+    WidgetsFlutterBinding.ensureInitialized();
+
+  FedaFlutter.applyConfig(
+    apiKey: FedaPayConfig.apiKey,
+    environment: ApiEnvironment.sandbox,
+  );
+
+
   runApp(
     // MaterialApp(
     MaterialApp.router(

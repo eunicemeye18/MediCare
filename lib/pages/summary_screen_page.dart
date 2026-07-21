@@ -1,7 +1,11 @@
+import 'package:feda_flutter/feda_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:kkiapay_flutter_sdk/kkiapay_flutter_sdk.dart';
 import 'package:medicare_v2/pages/success_page_screen.dart';
+import 'package:medicare_v2/services/fedapay_service.dart';
+// import 'package:kkiapay_flutter_sdk/kkiapay_flutter_sdk.dart';
+// import 'package:medicare_v2/pages/success_page_screen.dart';
 import 'package:medicare_v2/widgets/custom_elevated_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 // import 'package:kkiapay_flutter_sdk/kkiapay_flutter_sdk.dart';
 
 class SummaryScreenPage extends StatefulWidget {
@@ -11,51 +15,8 @@ class SummaryScreenPage extends StatefulWidget {
   State<SummaryScreenPage> createState() => _SummaryScreenPageState();
 }
 
-void callback(response, context) {
-  switch (response['status']) {
-    case PAYMENT_CANCELLED:
-      Navigator.pop(context);
-      debugPrint(PAYMENT_CANCELLED);
-      break;
-
-    case PAYMENT_INIT:
-      debugPrint(PAYMENT_INIT);
-      break;
-
-    case PENDING_PAYMENT:
-      debugPrint(PENDING_PAYMENT);
-      break;
-
-    case PAYMENT_SUCCESS:
-      // Navigator.pop(context);
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => SuccessPageScreen()),
-      );
-      break;
-
-    default:
-      debugPrint(UNKNOWN_EVENT);
-      break;
-  }
-}
-
 class _SummaryScreenPageState extends State<SummaryScreenPage> {
-  final kkiapay = KKiaPay(
-    amount: 1000, //
-    countries: ["BJ", "CI", "SN", "TG"], //
-    phone: "22961000000", //
-    name: "Jean Dupont", //
-    email: "email@mail.com", //
-    reason: 'Transaction reason', //
-    data: 'Fake data', //
-    sandbox: true, //
-    apikey: "a6d813f07b6811f19912d9ce7c383189", //
-    callback: callback, //
-    theme: defaultTheme, // Ex : "#222F5A",
-    partnerId: 'AxXxXXxId', //
-    paymentMethods: ["momo", "card"], //
-  );
+  final fedapay = FedaPayService();
 
   @override
   Widget build(BuildContext context) {
@@ -258,13 +219,35 @@ class _SummaryScreenPageState extends State<SummaryScreenPage> {
                 ],
               ),
             ),
-            Spacer(),
+            SizedBox(height: 40),
             CustomElevatedButton(
               text: "Procéder au paiement",
-              onPressed: () {
+              onPressed: () async {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => kkiapay),
+                  MaterialPageRoute(
+                    builder: (_) => PayWidget(
+                      instance: FedaFlutter.instance,
+                      transactionToCreate: TransactionCreate(
+                        amount: 1000,
+                        currency: CurrencyIso(iso: 'XOF'),
+                        description: "Test paiement Flutter",
+                      ),
+                      onPaymentSuccess: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => const SuccessPageScreen(),
+                          ),
+                        );
+                      },
+                      onPaymentFailed: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text("Le paiement a échoué")),
+                        );
+                      },
+                    ),
+                  ),
                 );
               },
             ),

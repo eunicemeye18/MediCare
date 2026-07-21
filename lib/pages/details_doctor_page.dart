@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medicare_v2/models/doctor.dart';
+import 'package:medicare_v2/widgets/custom_elevated_button.dart';
 import 'package:medicare_v2/widgets/custom_icon_star.dart';
 
 class DetailsDoctorPage extends StatefulWidget {
@@ -154,72 +156,12 @@ class _DetailsDoctorPageState extends State<DetailsDoctorPage> {
                     context,
                   ).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
                 ),
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.all(2),
-                    backgroundColor: Theme.of(
-                      context,
-                    ).colorScheme.secondaryContainer,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadiusGeometry.circular(8),
-                    ),
-                  ),
-                  child: Text(
-                    "Prendre rendez-vous",
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                SizedBox(width: 8),
-                Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Row(
-                    children: [
-                      SizedBox(width: 50),
-                      TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.all(2),
-                          backgroundColor: Theme.of(
-                            context,
-                          ).colorScheme.secondaryContainer,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadiusGeometry.circular(8),
-                          ),
-                        ),
-                        child: Text(
-                          "08:00 - 12:00",
-                          style: TextStyle(
-                            color: Theme.of(context).colorScheme.secondary,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      SizedBox(width: 50),
-                      TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.all(2),
-                          backgroundColor: Theme.of(
-                            context,
-                          ).colorScheme.secondaryContainer,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadiusGeometry.circular(8),
-                          ),
-                        ),
-                        child: Text(
-                          "14:00 - 17:00",
-                          style: TextStyle(
-                            color: Theme.of(context).colorScheme.secondary,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
-                  ),
+                SizedBox(height: 20),
+                CustomElevatedButton(
+                  text: "Prendre rendez-vous",
+                  onPressed: () {
+                    context.push('/summary_page');
+                  },
                 ),
               ],
             ),
