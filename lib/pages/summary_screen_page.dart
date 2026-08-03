@@ -5,7 +5,7 @@ import 'package:medicare_v2/services/fedapay_service.dart';
 // import 'package:kkiapay_flutter_sdk/kkiapay_flutter_sdk.dart';
 // import 'package:medicare_v2/pages/success_page_screen.dart';
 import 'package:medicare_v2/widgets/custom_elevated_button.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 // import 'package:kkiapay_flutter_sdk/kkiapay_flutter_sdk.dart';
 
 class SummaryScreenPage extends StatefulWidget {
