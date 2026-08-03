@@ -10,6 +10,164 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          padding: EdgeInsets.all(18),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            // color: Theme.of(context).colorScheme.secondary,
+            gradient: const LinearGradient(
+              colors: [Color(0xFF0D47A1), Color(0xFF00BCD4)],
+            ),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(100),
+                    child: Image.asset(
+                      "assets/images/doctorProfile5.jpg",
+                      width: 72,
+                      height: 72,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        'Dr RUMI',
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        'everumi@gmail.com',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              Container(
+                padding: EdgeInsets.all(18),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Colors.white,
+                ),
+                child: Column(
+                  children: [
+                    TextButton(
+                      onPressed: () {
+                        // context.push('/profile_modification');
+                      },
+                      style: TextButton.styleFrom(iconColor: Colors.black),
+                      child: Row(
+                        children: [
+                          Icon(Icons.drive_file_rename_outline),
+                          SizedBox(width: 8),
+                          Text(
+                            "Modifier le Profil",
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          Spacer(),
+                          Icon(Icons.chevron_right),
+                        ],
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(iconColor: Colors.black),
+                      child: Row(
+                        children: [
+                          Icon(Icons.calendar_month_outlined),
+                          SizedBox(width: 8),
+                          Text(
+                            "Historique des rendez-vous",
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          Spacer(),
+                          Icon(Icons.chevron_right),
+                        ],
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(iconColor: Colors.black),
+                      child: Row(
+                        children: [
+                          Icon(Icons.notifications_outlined),
+                          SizedBox(width: 8),
+                          Text(
+                            "Notifications",
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          Spacer(),
+                          Icon(Icons.chevron_right),
+                        ],
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(iconColor: Colors.black),
+                      child: Row(
+                        children: [
+                          Icon(Icons.settings_outlined),
+                          SizedBox(width: 8),
+                          Text(
+                            "Paramètres",
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          Spacer(),
+                          Icon(Icons.chevron_right),
+                        ],
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(iconColor: Colors.black),
+                      child: Row(
+                        children: [
+                          Icon(Icons.help_outline),
+                          SizedBox(width: 8),
+                          Text(
+                            "Aide et support",
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          Spacer(),
+                          Icon(Icons.chevron_right),
+                        ],
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      style: TextButton.styleFrom(iconColor: Colors.red),
+                      child: Row(
+                        children: [
+                          Icon(Icons.logout_outlined),
+                          SizedBox(width: 8),
+                          Text(
+                            "Déconnexion",
+                            style: TextStyle(color: Colors.red),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

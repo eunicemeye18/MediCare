@@ -134,7 +134,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                       SizedBox(height: 20),
                       CustomElevatedButton(
-                        text: "Valider",
+                        text: "Se connecter",
                         onPressed: () {
                           context.push('/home_screen');
                         },

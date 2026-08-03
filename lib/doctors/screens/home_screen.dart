@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:medicare_v2/widgets/custom_image_assets.dart';
 import 'package:medicare_v2/widgets/custom_text_button.dart';
 import 'package:medicare_v2/widgets/custom_text_form_field.dart';
+import 'package:medicare_v2/widgets/filter_by_date.dart';
 import 'package:medicare_v2/widgets/historical_doctor_card.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -22,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -123,33 +125,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
+                SizedBox(height: 20),
                 CustomTextFormField(
                   controller: _search,
                   hintText: "Rechercher un patient",
                 ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      CustomTextButton(
-                        text: "Tous",
-                        color: Theme.of(context).colorScheme.onPrimaryContainer,
-                      ),
-                      SizedBox(width: 8),
-                      CustomTextButton(
-                        text: "Cardiologue",
-                        color: Colors.white,
-                      ),
-                      SizedBox(width: 8),
-                      CustomTextButton(text: "Pédiatre", color: Colors.white),
-                      SizedBox(width: 8),
-                      CustomTextButton(
-                        text: "Gynécologue",
-                        color: Colors.white,
-                      ),
-                    ],
-                  ),
-                ),
+                FilterByDate(),
                 TextButton(
                   onPressed: () {},
                   child: Text(
@@ -158,6 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
+                    textAlign: TextAlign.start,
                   ),
                 ),
                 // Container(child: Text("data")),

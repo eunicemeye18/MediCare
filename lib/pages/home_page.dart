@@ -4,6 +4,7 @@ import 'package:medicare_v2/data/doctor_data.dart';
 import 'package:medicare_v2/widgets/custom_image_assets.dart';
 import 'package:medicare_v2/widgets/custom_text_form_field.dart';
 import 'package:medicare_v2/widgets/doctor_card.dart';
+import 'package:medicare_v2/widgets/filter_by_date.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -142,6 +143,7 @@ class _HomePageState extends State<HomePage> {
                     prefixIcon: Icon(Icons.search),
                   ),
                   SizedBox(height: 20),
+                  FilterByDate(),
                   // InkWell(
                   //   onTap: () {},
                   //   child: Container(

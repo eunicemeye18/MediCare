@@ -12,7 +12,6 @@ import 'package:medicare_v2/onboarding/screens/onboarding_screens.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medicare_v2/onboarding/screens/confirmation_screen.dart';
 import 'package:medicare_v2/onboarding/screens/forgot_password.dart';
-// import 'package:medicare/onboarding/screens/login_screen.dart';
 import 'package:medicare_v2/onboarding/screens/sign_up_screen.dart';
 import 'package:medicare_v2/onboarding/screens/verification_otp_screen.dart';
 import 'package:medicare_v2/pages/activities_page.dart';
