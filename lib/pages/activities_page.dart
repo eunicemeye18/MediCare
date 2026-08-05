@@ -26,38 +26,61 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
             ),
             SizedBox(height: 20),
             Expanded(
-              child: HistoricalCard(
-                colors: Colors.green,
-                backColors: const Color.fromARGB(255, 235, 252, 236),
-                text: "Terminé",
-              ),
-            ),
-            Expanded(
-              child: HistoricalCard(
-                colors: Colors.orange,
-                backColors: const Color.fromARGB(255, 252, 247, 240),
-                text: "En attente",
-              ),
-            ),
-            Expanded(
-              child: HistoricalCard(
-                colors: Colors.red,
-                backColors: const Color.fromARGB(255, 254, 240, 238),
-                text: "Rejetée",
-              ),
-            ),
-            Expanded(
-              child: HistoricalCard(
-                colors: Colors.grey,
-                backColors: const Color.fromARGB(255, 228, 228, 228),
-                text: "Annulée",
-              ),
-            ),
-            Expanded(
-              child: HistoricalCard(
-                colors: Colors.green,
-                backColors: const Color.fromARGB(255, 235, 252, 236),
-                text: "Terminé",
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    HistoricalCard(
+                      colors: Colors.green,
+                      backColors: const Color.fromARGB(255, 235, 252, 236),
+                      text: "Terminé",
+                    ),
+                    HistoricalCard(
+                      colors: Colors.orange,
+                      backColors: const Color.fromARGB(255, 252, 247, 240),
+                      text: "En attente",
+                    ),
+                    HistoricalCard(
+                      colors: Colors.red,
+                      backColors: const Color.fromARGB(255, 254, 240, 238),
+                      text: "Rejetée",
+                    ),
+                    HistoricalCard(
+                      colors: Colors.grey,
+                      backColors: const Color.fromARGB(255, 228, 228, 228),
+                      text: "Annulée",
+                    ),
+                    HistoricalCard(
+                      colors: Colors.green,
+                      backColors: const Color.fromARGB(255, 235, 252, 236),
+                      text: "Terminé",
+                    ),
+                    HistoricalCard(
+                      colors: Colors.green,
+                      backColors: const Color.fromARGB(255, 235, 252, 236),
+                      text: "Terminé",
+                    ),
+                    HistoricalCard(
+                      colors: Colors.orange,
+                      backColors: const Color.fromARGB(255, 252, 247, 240),
+                      text: "En attente",
+                    ),
+                    HistoricalCard(
+                      colors: Colors.red,
+                      backColors: const Color.fromARGB(255, 254, 240, 238),
+                      text: "Rejetée",
+                    ),
+                    HistoricalCard(
+                      colors: Colors.grey,
+                      backColors: const Color.fromARGB(255, 228, 228, 228),
+                      text: "Annulée",
+                    ),
+                    HistoricalCard(
+                      colors: Colors.green,
+                      backColors: const Color.fromARGB(255, 235, 252, 236),
+                      text: "Terminé",
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

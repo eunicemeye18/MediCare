@@ -59,6 +59,7 @@ class _VerificationOtpScreenState extends State<VerificationOtpScreen> {
                 Text("Renvoyer le code de confirmation"),
                 Row(
                   children: [
+                    SizedBox(width: 90),
                     Text(
                       "02:00",
                       style: TextStyle(fontWeight: FontWeight.bold),
