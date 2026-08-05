@@ -18,153 +18,162 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Bienvenue",
-                          style: Theme.of(
-                            context,
-                          ).textTheme.bodyMedium?.copyWith(color: Colors.grey),
-                        ),
-                        SizedBox(height: 1),
-                        Text(
-                          "Dr RUMI",
-                          style: Theme.of(context).textTheme.titleMedium
-                              ?.copyWith(fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Bienvenue",
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodyMedium?.copyWith(color: Colors.grey),
+                      ),
+                      SizedBox(height: 1),
+                      Text(
+                        "Dr RUMI",
+                        style: Theme.of(context).textTheme.titleMedium
+                            ?.copyWith(fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
 
-                    CircleAvatar(
-                      backgroundColor: Colors.grey.shade200,
-                      child: const Icon(Icons.notifications_none),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 8),
-                Row(
-                  children: [
-                    Text(
-                      "Prochain rendez-vous",
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 8),
-                InkWell(
-                  onTap: () {
-                    context.push('/details_appointment');
-                  },
-                  child: Container(
-                    padding: EdgeInsets.all(14),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      // color: Theme.of(context).colorScheme.secondary,
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFF0D47A1), Color(0xFF00BCD4)],
-                      ),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(width: 8),
-                            CustomImageAssets(height: 72, width: 72),
-                            SizedBox(width: 12),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 8),
-                                Row(
-                                  children: [
-                                    Text(
-                                      "21 Nov.2026  ",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyLarge
-                                          ?.copyWith(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                          ),
-                                    ),
-                                    SizedBox(width: 5),
-                                    Text(
-                                      "10:30",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyLarge
-                                          ?.copyWith(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                          ),
-                                    ),
-                                  ],
+                  CircleAvatar(
+                    backgroundColor: Colors.grey.shade200,
+                    child: const Icon(Icons.notifications_none),
+                  ),
+                ],
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 8),
+                      Row(
+                        children: [
+                          Text(
+                            "Prochain rendez-vous",
+                            style: Theme.of(context).textTheme.bodyLarge
+                                ?.copyWith(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
                                 ),
-                                Text("Jean Dupont"),
-                              ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 8),
+                      InkWell(
+                        onTap: () {
+                          context.push('/details_appointment');
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(14),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            // color: Theme.of(context).colorScheme.secondary,
+                            gradient: const LinearGradient(
+                              colors: [Color(0xFF0D47A1), Color(0xFF00BCD4)],
                             ),
-                          ],
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(width: 8),
+                                  CustomImageAssets(height: 72, width: 72),
+                                  SizedBox(width: 12),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(height: 8),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            "21 Nov.2026  ",
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodyLarge
+                                                ?.copyWith(
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white,
+                                                ),
+                                          ),
+                                          SizedBox(width: 5),
+                                          Text(
+                                            "10:30",
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodyLarge
+                                                ?.copyWith(
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                      Text("Jean Dupont"),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ],
-                    ),
+                      ),
+                      SizedBox(height: 20),
+                      CustomTextFormField(
+                        controller: _search,
+                        hintText: "Rechercher un patient",
+                      ),
+                      FilterByDate(),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Rendez-vous prévus",
+                          style: Theme.of(context).textTheme.bodyMedium
+                              ?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                          textAlign: TextAlign.start,
+                        ),
+                      ),
+                      // Container(child: Text("data")),
+                      HistoricalDoctorCard(
+                        colors: Colors.green,
+                        backColors: const Color.fromARGB(255, 235, 252, 236),
+                        text: "Terminé",
+                      ),
+                      HistoricalDoctorCard(
+                        colors: Colors.orange,
+                        backColors: const Color.fromARGB(255, 252, 247, 240),
+                        text: "En attente",
+                      ),
+                      HistoricalDoctorCard(
+                        colors: Colors.red,
+                        backColors: const Color.fromARGB(255, 254, 240, 238),
+                        text: "Rejetée",
+                      ),
+                      HistoricalDoctorCard(
+                        colors: Colors.grey,
+                        backColors: const Color.fromARGB(255, 228, 228, 228),
+                        text: "Annulée",
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(height: 20),
-                CustomTextFormField(
-                  controller: _search,
-                  hintText: "Rechercher un patient",
-                ),
-                FilterByDate(),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Rendez-vous prévus",
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                    textAlign: TextAlign.start,
-                  ),
-                ),
-                // Container(child: Text("data")),
-                HistoricalDoctorCard(
-                  colors: Colors.green,
-                  backColors: const Color.fromARGB(255, 235, 252, 236),
-                  text: "Terminé",
-                ),
-                HistoricalDoctorCard(
-                  colors: Colors.orange,
-                  backColors: const Color.fromARGB(255, 252, 247, 240),
-                  text: "En attente",
-                ),
-                HistoricalDoctorCard(
-                  colors: Colors.red,
-                  backColors: const Color.fromARGB(255, 254, 240, 238),
-                  text: "Rejetée",
-                ),
-                HistoricalDoctorCard(
-                  colors: Colors.grey,
-                  backColors: const Color.fromARGB(255, 228, 228, 228),
-                  text: "Annulée",
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
