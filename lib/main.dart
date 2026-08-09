@@ -16,6 +16,7 @@ import 'package:medicare_v2/onboarding/screens/sign_up_screen.dart';
 import 'package:medicare_v2/onboarding/screens/verification_otp_screen.dart';
 import 'package:medicare_v2/pages/activities_page.dart';
 import 'package:medicare_v2/pages/details_doctor_page.dart';
+import 'package:medicare_v2/pages/disponibility_doctor_page.dart';
 import 'package:medicare_v2/pages/favorites_page.dart';
 import 'package:medicare_v2/pages/historical_page.dart';
 import 'package:medicare_v2/pages/home_page.dart';
@@ -63,6 +64,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/summary_page',
       builder: (context, state) => SummaryScreenPage(),
+    ),
+    GoRoute(
+      path: '/disponibility_doctor_page',
+      builder: (context, state) => DisponibilityDoctorPage(),
     ),
     GoRoute(
       path: '/profile_modification',

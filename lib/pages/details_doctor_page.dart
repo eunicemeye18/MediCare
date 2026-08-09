@@ -160,7 +160,7 @@ class _DetailsDoctorPageState extends State<DetailsDoctorPage> {
                 CustomElevatedButton(
                   text: "Prendre rendez-vous",
                   onPressed: () {
-                    context.push('/summary_page');
+                    context.push('/disponibility_doctor_page');
                   },
                 ),
               ],

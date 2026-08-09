@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:medicare_v2/widgets/FilterDropdown.dart';
 import 'package:medicare_v2/widgets/custom_image_assets.dart';
 import 'package:medicare_v2/widgets/custom_text_form_field.dart';
-import 'package:medicare_v2/widgets/filter_by_date.dart';
 import 'package:medicare_v2/widgets/historical_doctor_card.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -49,11 +49,164 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
+              SizedBox(height: 8),
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Filterdropdown(
+                        values: [
+                          "Aujourd'hui",
+                          "Demain",
+                          "Cette Semaine",
+                          "Ce Mois",
+                          "Choisir une date",
+                        ],
+                        hint: "Aujourd'hui",
+                      ),
+                      SizedBox(height: 12),
+                      Row(
+                        children: [
+                          // SizedBox(width: 8),
+                          Expanded(
+                            child: Container(
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 220, 237, 251),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(height: 4),
+                                    Icon(
+                                      Icons.calendar_month_outlined,
+                                      size: 30,
+                                      color: Colors.blue,
+                                    ),
+                                    SizedBox(height: 4),
+                                    Text(
+                                      "5",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleLarge
+                                          ?.copyWith(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                    ),
+                                    SizedBox(height: 4),
+                                    Text(
+                                      "Rendez-vous aujourd'hui",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall
+                                          ?.copyWith(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                    ),
+                                    SizedBox(height: 8),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 8),
+                          Expanded(
+                            child: Container(
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 253, 241, 225),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(height: 4),
+                                    Icon(
+                                      Icons.access_time_outlined,
+                                      size: 30,
+                                      color: Colors.orange,
+                                    ),
+                                    SizedBox(height: 4),
+                                    Text(
+                                      "2",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleLarge
+                                          ?.copyWith(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                    ),
+                                    SizedBox(height: 4),
+                                    Text(
+                                      "Demandes en attente",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall
+                                          ?.copyWith(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                    ),
+                                    SizedBox(height: 8),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 8),
+                          Expanded(
+                            child: Container(
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: Color.fromARGB(255, 224, 254, 225),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(height: 4),
+                                    Icon(
+                                      Icons.check_circle_outline,
+                                      size: 30,
+                                      color: Colors.green,
+                                    ),
+                                    SizedBox(height: 4),
+                                    Text(
+                                      "12",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleLarge
+                                          ?.copyWith(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                    ),
+                                    SizedBox(height: 4),
+                                    Text(
+                                      "Consultations terminés",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall
+                                          ?.copyWith(
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                    ),
+                                    SizedBox(height: 8),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          // SizedBox(width: 8),
+                        ],
+                      ),
                       SizedBox(height: 8),
                       Row(
                         children: [
@@ -134,7 +287,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         controller: _search,
                         hintText: "Rechercher un patient",
                       ),
-                      FilterByDate(),
                       TextButton(
                         onPressed: () {},
                         child: Text(

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medicare_v2/data/doctor_data.dart';
+import 'package:medicare_v2/widgets/FilterDropdown.dart';
 import 'package:medicare_v2/widgets/custom_image_assets.dart';
 import 'package:medicare_v2/widgets/custom_text_form_field.dart';
 import 'package:medicare_v2/widgets/doctor_card.dart';
-import 'package:medicare_v2/widgets/filter_by_date.dart';
+import 'package:medicare_v2/widgets/filter_by_speciality.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -73,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                           SizedBox(height: 8),
                           InkWell(
                             onTap: () {
-                              context.push('/summary_page');
+                              context.push('/disponibility_doctor_page');
                             },
                             child: Container(
                               padding: EdgeInsets.all(14),
@@ -156,8 +157,65 @@ class _HomePageState extends State<HomePage> {
                             prefixIcon: Icon(Icons.search),
                           ),
                           SizedBox(height: 20),
-                          FilterByDate(),
-                          // InkWell(
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                    width: 120,
+                                    child: Filterdropdown(
+                                      values: [
+                                        "Généraliste",
+                                        "Cardiologue",
+                                        "Pédiatre",
+                                        "Obstétricien",
+                                        "Dentiste",
+                                        "Ophtamologue",
+                                      ],
+                                      hint: 'Spécialités',
+                                    ),
+                                  ),
+                                  SizedBox(width: 2),
+                                  SizedBox(
+                                    width: 130,
+                                    child: Filterdropdown(
+                                      values: [
+                                        "Aujourd'hui",
+                                        "Demain",
+                                        "Cette Semaine",
+                                        "Ce Mois",
+                                        "Choisir une date",
+                                      ],
+                                      hint: "Disponible",
+                                    ),
+                                  ),
+                                  SizedBox(width: 2),
+                                  Container(
+                                    width: 150,
+                                    height: 40,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12),
+                                      // color: Theme.of(context).colorScheme.inversePrimary,
+                                      color: Colors.white,
+                                      border: BoxBorder.all(
+                                        color: Colors.grey.shade300,
+                                        width: 1,
+                                      ),
+                                    ),
+                                    child: Row(
+                                      children: [
+                                        Icon(Icons.filter_list),
+                                        Text("Plus de filtres"),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 20), // InkWell(
                           //   onTap: () {},
                           //   child: Container(
                           //     padding: const EdgeInsets.all(16),
