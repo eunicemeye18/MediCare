@@ -5,7 +5,6 @@ import 'package:medicare_v2/widgets/FilterDropdown.dart';
 import 'package:medicare_v2/widgets/custom_image_assets.dart';
 import 'package:medicare_v2/widgets/custom_text_form_field.dart';
 import 'package:medicare_v2/widgets/doctor_card.dart';
-import 'package:medicare_v2/widgets/filter_by_speciality.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
