@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medicare_v2/widgets/FilterDropdown.dart';
-import 'package:medicare_v2/widgets/disponibility_doctor_card.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 class DisponibilityScreen extends StatefulWidget {
   const DisponibilityScreen({super.key});
@@ -10,6 +9,8 @@ class DisponibilityScreen extends StatefulWidget {
 }
 
 class _DisponibilityScreenState extends State<DisponibilityScreen> {
+  DateTime _focusedDay = DateTime.now();
+  DateTime? _selectedDay;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,63 +30,95 @@ class _DisponibilityScreenState extends State<DisponibilityScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Filterdropdown(
-                      values: [
-                        "Cette Semaine",
-                        "Ce Mois",
-                        "Mois Prochain",
-                        "Choisir une date",
-                      ],
-                      hint: "Cette Semaine",
+                    TableCalendar(
+                      focusedDay: _focusedDay,
+                      firstDay: DateTime.now(),
+                      lastDay: DateTime.now().add(Duration(days: 365)),
+                      calendarFormat: CalendarFormat.week,
+                      availableCalendarFormats: const {
+                        CalendarFormat.week: 'Semaine',
+                      },
+                      rowHeight: 38,
+                      daysOfWeekHeight: 20,
+                      headerStyle: HeaderStyle(
+                        formatButtonVisible: false,
+                        titleCentered: true,
+                        leftChevronIcon: Icon(Icons.chevron_left, size: 20),
+                        rightChevronIcon: Icon(Icons.chevron_right, size: 20),
+                        headerPadding: EdgeInsets.symmetric(vertical: 4),
+                      ),
+                      selectedDayPredicate: (day) =>
+                          isSameDay(_selectedDay, day),
+                      onDaySelected: (selectedDay, focusedDay) {
+                        setState(() {
+                          _selectedDay = selectedDay;
+                          _focusedDay = focusedDay;
+                        });
+                      },
                     ),
-                    SizedBox(height: 12),
-                    DisponibilityDoctorCard(
-                      textDay: "Lundi",
-                      textDate: "19 Août",
-                      textHourOne: "08:00 - 12:00",
-                      textHourTwo: "14:00 - 17:30",
-                    ),
-                    DisponibilityDoctorCard(
-                      textDay: "Mardi",
-                      textDate: "20 Août",
-                      textHourOne: "08:00 - 12:00",
-                      textHourTwo: "14:00 - 17:30",
-                    ),
-                    DisponibilityDoctorCard(
-                      textDay: "Mercredi",
-                      textDate: "21 Août",
-                      textHourOne: "08:00 - 12:00",
-                      textHourTwo: "",
-                    ),
-                    DisponibilityDoctorCard(
-                      textDay: "Jeudi",
-                      textDate: "22 Août",
-                      textHourOne: "08:00 - 12:00",
-                      textHourTwo: "14:00 - 17:30",
-                    ),
-                    DisponibilityDoctorCard(
-                      textDay: "Vendredi",
-                      textDate: "23 Août",
-                      textHourOne: "08:00 - 12:00",
-                      textHourTwo: "14:00 - 17:30",
-                    ),
-                    DisponibilityDoctorCard(
-                      textDay: "Samedi",
-                      textDate: "24 Août",
-                      textHourOne: "08:00 - 12:00",
-                      textHourTwo: "14:00 - 17:30",
-                    ),
-                    DisponibilityDoctorCard(
-                      textDay: "Dimanche",
-                      textDate: "25 Août",
-                      textHourOne: "08:00 - 12:00",
-                      textHourTwo: "14:00 - 17:30",
-                    ),
-                    // DisponibilityDoctorCard(text: '08:00 - 10:00'),
-                    // DisponibilityDoctorCard(text: '10:30 - 12:30'),
-                    // DisponibilityDoctorCard(text: '14:00 - 16:00'),
-                    // DisponibilityDoctorCard(text: '16:30 - 18:30'),
-                    SizedBox(height: 25),
+                    // CalendarDatePicker(
+                    //   firstDate: DateTime.now(),
+                    //   initialDate: DateTime.now(),
+                    //   lastDate: DateTime.now().add(Duration(days: 365)),
+                    //   onDateChanged: (DateTime value) {},
+                    // ),
+                    // Filterdropdown(
+                    //   values: [
+                    //     "Cette Semaine",
+                    //     "Ce Mois",
+                    //     "Mois Prochain",
+                    //     "Choisir une date",
+                    //   ],
+                    //   hint: "Cette Semaine",
+                    // ),
+                    // SizedBox(height: 12),
+                    // DisponibilityDoctorCard(
+                    //   textDay: "Lundi",
+                    //   textDate: "19 Août",
+                    //   textHourOne: "08:00 - 12:00",
+                    //   textHourTwo: "14:00 - 17:30",
+                    // ),
+                    // DisponibilityDoctorCard(
+                    //   textDay: "Mardi",
+                    //   textDate: "20 Août",
+                    //   textHourOne: "08:00 - 12:00",
+                    //   textHourTwo: "14:00 - 17:30",
+                    // ),
+                    // DisponibilityDoctorCard(
+                    //   textDay: "Mercredi",
+                    //   textDate: "21 Août",
+                    //   textHourOne: "08:00 - 12:00",
+                    //   textHourTwo: "",
+                    // ),
+                    // DisponibilityDoctorCard(
+                    //   textDay: "Jeudi",
+                    //   textDate: "22 Août",
+                    //   textHourOne: "08:00 - 12:00",
+                    //   textHourTwo: "14:00 - 17:30",
+                    // ),
+                    // DisponibilityDoctorCard(
+                    //   textDay: "Vendredi",
+                    //   textDate: "23 Août",
+                    //   textHourOne: "08:00 - 12:00",
+                    //   textHourTwo: "14:00 - 17:30",
+                    // ),
+                    // DisponibilityDoctorCard(
+                    //   textDay: "Samedi",
+                    //   textDate: "24 Août",
+                    //   textHourOne: "08:00 - 12:00",
+                    //   textHourTwo: "14:00 - 17:30",
+                    // ),
+                    // DisponibilityDoctorCard(
+                    //   textDay: "Dimanche",
+                    //   textDate: "25 Août",
+                    //   textHourOne: "08:00 - 12:00",
+                    //   textHourTwo: "14:00 - 17:30",
+                    // ),
+                    // // DisponibilityDoctorCard(text: '08:00 - 10:00'),
+                    // // DisponibilityDoctorCard(text: '10:30 - 12:30'),
+                    // // DisponibilityDoctorCard(text: '14:00 - 16:00'),
+                    // // DisponibilityDoctorCard(text: '16:30 - 18:30'),
+                    // SizedBox(height: 25),
                     SizedBox(
                       width: double.infinity,
                       height: 50,
@@ -95,7 +128,7 @@ class _DisponibilityScreenState extends State<DisponibilityScreen> {
                             context,
                           ).colorScheme.primary,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadiusGeometry.circular(12),
+                            borderRadius: BorderRadius.circular(12),
                           ),
                         ),
                         onPressed: () {},

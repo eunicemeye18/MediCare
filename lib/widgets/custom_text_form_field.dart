@@ -9,7 +9,8 @@ class CustomTextFormField extends StatefulWidget {
     super.key,
     required this.controller,
     required this.hintText,
-    this.suffixIcon, this.prefixIcon,
+    this.suffixIcon,
+    this.prefixIcon,
   });
 
   @override
@@ -20,7 +21,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 320,
+      width: double.infinity,
       child: TextFormField(
         controller: widget.controller,
         style: TextStyle(color: Colors.black),
